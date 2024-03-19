@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
  
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("home");
  
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', [AuthController::class, 'register'])->name('register');
