@@ -34,6 +34,13 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" id="password" required>
                         </div>
+                        <div class="form-group">
+                            <label for="role">Choose your role:</label>
+                            <select id="role" class="form-control" name="role">
+                                <option value="1">Recruiter</option>
+                                <option value="2">Candidate</option>
+                            </select>
+                        </div>
                         <div class="mb-3">
                             <div class="d-grid">
                                 <button class="btn btn-primary">Register</button>

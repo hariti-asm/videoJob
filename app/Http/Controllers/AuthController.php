@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\RegisterRequest;
  
 class AuthController extends Controller
 {
@@ -14,16 +15,16 @@ class AuthController extends Controller
         return view('register');
     }
  
-    public function registerPost(Request $request)
-    {
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
- 
-        $user->save();
- 
-        return redirect()->route('home')->with('success', 'Register successfully');
+    public function registerPost(RegisterRequest $request, User $user)
+    { 
+        $user->create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
+        ]);
+    
+        return redirect()->route('home')->with('success', 'Registered successfully');
     }
  
     public function login()
