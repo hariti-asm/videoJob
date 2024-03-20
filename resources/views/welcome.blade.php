@@ -93,7 +93,7 @@
       <div class="col-md-6 text-center" data-aos="fade">
         <h1 class="h3 mb-0">Your Dream Job</h1>
         <p class="h3 text-white mb-5">Is Waiting For You</p>
-        {{-- <p><a href="/register" class="btn btn-outline-warning py-3 px-4">Job seeker</a> <a href="{{ route('employer.register') }}" class="btn btn-warning py-3 px-4">Employer </a></p> --}}
+        <p><a href="/register" class="btn btn-outline-warning py-3 px-4">Job seeker</a> <a href="{{ route('employer.register') }}" class="btn btn-warning py-3 px-4">Employer </a></p>
         
       </div>
     </div>

@@ -1,9 +1,9 @@
 import './bootstrap';
-import { createApp } from 'vue'
+import { createApp } from "vue/dist/vue.esm-bundler";
  
 const app = createApp()
-import SearchComponent from './components/SearchComponent.vue';
 app.component('search-component', SearchComponent);
+import SearchComponent from './components/SearchComponent.vue';
 
 app.mount('#app')
 

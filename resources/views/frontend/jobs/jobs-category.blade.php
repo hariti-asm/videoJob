@@ -3,7 +3,7 @@
 @section('content')
 <div style="height: 94px;"></div>
 
-<div class="unit-5 overlay" style="background-image: url({{ asset('external/images/hero_2.jpg') }});">
+<div class="unit-5 overlay" style="background-image: url({{ asset('backend/external/images/hero_2.jpg') }});">
   <div class="container text-center">
     <h1 class="mb-0" style="    color: #fff;
     font-size: 2.5rem;">Jobs by : {{ $categoryName->name }}</h1>

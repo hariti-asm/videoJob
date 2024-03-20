@@ -17,9 +17,9 @@
 <div class="site-section bg-light">
     <div class="container">
       <div class="row mb-3">
-        {{-- <div class="col-lg-12">
+        <div class="col-lg-12">
           <search-component></search-component>
-        </div> --}}
+        </div>
       </div>
       <div class="row">
         <div class="col-md-12 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
