@@ -78,7 +78,7 @@ export default {
             this.results = [];
             if (this.keyword.length > 1) {
                 axios
-                    .get("/jobfinder/jobs/search", {
+                    .get("/jobs/search", {
                         params: { keyword: this.keyword },
                     })
                     .then((response) => {

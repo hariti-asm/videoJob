@@ -1,6 +1,6 @@
 
 @include('frontend/partials.head')
-@include('frontend/partials.nav')
+{{-- @include('frontend/partials.nav') --}}
 
 @include('frontend/partials.hero')
 @include('frontend/partials.category')
@@ -17,7 +17,7 @@
 
       
           @foreach ($jobs as $job)
-        
+      
 
           <a href="{{ route('job.show', [$job->id, $job->slug]) }}" class="job-item d-block d-md-flex align-items-center  border-bottom  
             

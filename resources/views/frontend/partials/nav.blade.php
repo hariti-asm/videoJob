@@ -29,7 +29,7 @@
 
                   <ul class="site-menu js-clone-nav d-none d-lg-block">
          
-                    {{-- <li class="{{ request()->routeIs('company') ? 'active' : '' }}"><a href="{{ route('company') }}">Company</a></li> --}}
+                    <li class="{{ request()->routeIs('company') ? 'active' : '' }}"><a href="{{ route('company') }}">Company</a></li>
                     @if (!Auth::check())
                     <li class="{{ request()->routeIs('/register') ? 'active' : '' }}"><a href="/register">For Job Seeker</a></li>
                     <li class="{{ request()->routeIs('employer.register') ? 'active' : '' }}"><a href="{{ route('employer.register') }}">For Employees</a></li>
@@ -135,7 +135,8 @@
         <div class="card">
        
             <div class="card-body">
-                <form method="POST" action="{{ route('login') }}">
+              {{-- {{ route('login') }} --}}
+                <form method="POST" action="">
                     @csrf
                       
                     <div class="row mb-3">

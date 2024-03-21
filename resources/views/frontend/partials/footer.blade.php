@@ -13,10 +13,10 @@
             <div class="col-md-6">
               <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
                 <ul class="list-unstyled">
-{{-- 
+
                   @foreach (App\Models\Category::has('jobs')->limit(5)->where('status', 1)->orderBy('name', 'desc')->get() as $cat)
                     <li><a href="{{ route('category.index', [$cat->id,$cat->slug ]) }}">{{ $cat->name }} ({{ $cat->jobs->count() }})</a></li>
-                  @endforeach --}}
+                  @endforeach
 
   
                 </ul>

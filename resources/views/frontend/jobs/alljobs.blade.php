@@ -1,11 +1,11 @@
-@extends('layouts.main')
+{{-- @extends('layouts.main') --}}
 
 @section('content')
 
 
 <div style="height: 94px;"></div>
 
-<div class="unit-5 overlay" style="background-image: url({{ asset('backend/external/images/hero_2.jpg') }});">
+<div class="unit-5 overlay" style="background-image: url({{ asset('external/images/hero_2.jpg') }});">
   <div class="container text-center">
     <h1 class="mb-0" style="    color: #fff;
     font-size: 2.5rem;">All Jobs</h1>
@@ -28,6 +28,7 @@
 
         
             @foreach ($jobs as $job)
+          
 
             <a href="{{ route('job.show', [$job->id, $job->slug]) }}" class="job-item d-block d-md-flex align-items-center  border-bottom  
               
@@ -95,8 +96,11 @@
   </div>
 
 
+
+
+
+
+
+
 @endsection
 
-<style>
-  
-</style>

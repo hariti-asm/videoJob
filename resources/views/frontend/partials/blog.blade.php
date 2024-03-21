@@ -14,14 +14,14 @@
           @foreach ($posts as  $post)
             
          
+
           <div class="media-with-text">
             <div class="img-border-sm mb-4">
-              {{ route('adminPostRead', [$post->id, $post->slug]) }}
-              <a href="" class="image-play">
+              <a href="{{ route('adminPostRead', [$post->id, $post->slug]) }}" class="image-play">
                 @if ($post->post_thumbnail)
                 <img src="{{ asset('storage/'.$post->post_thumbnail)}}" alt="" class="img-fluid">
                 @else  
-                <img src="backend/external/images/img_1.jpg" alt="" class="img-fluid">
+                <img src="external/images/img_1.jpg" alt="" class="img-fluid">
 
                 @endif
               </a>
