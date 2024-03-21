@@ -212,7 +212,7 @@ class JobController extends Controller
             return redirect()->route('login')->with('error', 'User ID is missing. Please try again.');
         }
     } else {
-        return redirect()->route('login');
+        return redirect()->route('register');
     }
 }
 
