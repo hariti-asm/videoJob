@@ -81,7 +81,7 @@ class RegisterController extends Controller
         //     'dob'=> request('dob')
         // ]);
 
-        return redirect()->route('home');
+        return redirect()->route('applicant');
     }
 
 }
