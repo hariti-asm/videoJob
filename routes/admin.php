@@ -4,6 +4,9 @@
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/register', function () {
+    return view("auth.register");
+})->name('register');
 
 Route::middleware('admin')->prefix('dashboard')->group(function () { 
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard'); 

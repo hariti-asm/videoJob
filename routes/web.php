@@ -10,10 +10,12 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\EmployerRegisterController;
 
 
-// Route::group(['middleware' => 'auth'], function () {
-//     Route::get('/home', [HomeController::class, 'index']);
-//     Route::delete('/logout', [RegisterController::class, 'logout'])->name('logout');
-// });
+
+Route::get('/register', function () {
+    return view("auth.register");
+})->name('register');
+Route::post('register', [RegisterController::class, 'create'])->name('register');
+
 Route::get('/', [JobController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
@@ -47,6 +49,5 @@ Route::get('/category/{id}/{slug}', [CategoryController::class, 'index'])->name(
 Route::get('/companies', [CompanyController::class, 'company'])->name('company');
 //search Route
 Route::get('/jobs/search', [JobController::class, 'searchJobs']);
-
 // Email Route 
 Route::post('/job/mail', [EmailController::class, 'send'])->name('mail');

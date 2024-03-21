@@ -152,10 +152,10 @@
 
             @if (!Auth::check() )
 
-              <p><a href="/register" class="btn btn-dark" style="width: 100%;">For apply need to Register/Login.</a></p>
+              <p><a href="{{route('register')}}" class="btn btn-dark" style="width: 100%;">For apply need to Register/Login.</a></p>
 
             @endif
-          {{-- <p><a href="#" class="btn btn-primary  py-2 px-4">Apply Job</a></p> --}}
+          <p><a href="#" class="btn btn-primary  py-2 px-4">Apply Job</a></p>
         </div>
       </div>
     </div>
