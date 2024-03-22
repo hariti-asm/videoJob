@@ -27,6 +27,7 @@
                     @include('frontend.profile.partials.delete-user-form')
                 </div>
             </div>
+            
         </div>
     </div>
 @endsection

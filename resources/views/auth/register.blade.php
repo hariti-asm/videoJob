@@ -99,6 +99,108 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
+                        
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" autocomplete="address" autofocus>
+                        
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                  
+                       
+                        <div class="row mb-3">
+                            <label for="experience" class="col-md-4 col-form-label text-md-end">{{ __('Experience') }}</label>
+                        
+                            <div class="col-md-6">
+                                <textarea id="experience" class="form-control @error('experience') is-invalid @enderror" name="experience" autocomplete="experience">{{ old('experience') }}</textarea>
+                        
+                                @error('experience')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
+                        
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" autocomplete="phone">
+                        
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label for="bio" class="col-md-4 col-form-label text-md-end">{{ __('Bio') }}</label>
+                        
+                            <div class="col-md-6">
+                                <textarea id="bio" class="form-control @error('bio') is-invalid @enderror" name="bio" autocomplete="bio">{{ old('bio') }}</textarea>
+                        
+                                @error('bio')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <input type="hidden" value="seeker" name="status">
+
+                        
+                        <div class="row mb-3">
+                            <label for="cover_letter" class="col-md-4 col-form-label text-md-end">{{ __('Cover Letter (PDF)') }}</label>
+                        
+                            <div class="col-md-6">
+                                <input id="cover_letter" type="file" class="form-control-file @error('cover_letter') is-invalid @enderror" name="cover_letter">
+                        
+                                @error('cover_letter')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label for="resume" class="col-md-4 col-form-label text-md-end">{{ __('Resume (PDF)') }}</label>
+                        
+                            <div class="col-md-6">
+                                <input id="resume" type="file" class="form-control-file @error('resume') is-invalid @enderror" name="resume">
+                        
+                                @error('resume')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                      <div class="row mb-3">
+                            <label for="avatar" class="col-md-4 col-form-label text-md-end">{{ __('Avatar (JPEG/JPG/PNG)') }}</label>
+                        
+                            <div class="col-md-6">
+                                <input id="avatar" type="file" class="form-control-file @error('avatar') is-invalid @enderror" name="avatar">
+                        
+                                @error('avatar')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
