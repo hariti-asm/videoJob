@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-header text-center"><h3 class="mt-1">{{ __('Job Seeker Register') }}</h3></div>
 
-                <div class="cfroard-body">
+                <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

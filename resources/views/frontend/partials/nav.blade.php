@@ -62,7 +62,8 @@
                             @endif
 
                             @if (Auth::user()->user_type==='seeker')
-                            <li><a  href="{{ route('user.profile') }}">
+                            {{-- {{ route('user.profile') }}"> --}}
+                            <li><a  href="">
                                 {{ __('Profile') }}
                             </a></li>
                             <li><a  href="{{ route('home') }}">

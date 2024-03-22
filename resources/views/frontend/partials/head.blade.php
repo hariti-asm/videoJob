@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{ asset('backend/external/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/external/css/bootstrap-datepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/external/css/animate.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
