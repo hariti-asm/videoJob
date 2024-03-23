@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="{{ asset('backend/external/css/aos.css') }}">
 
     <link rel="stylesheet" href="{{ asset('backend/external/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/external/css/em.css') }}">
+
 
 
 </head>

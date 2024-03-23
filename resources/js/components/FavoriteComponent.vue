@@ -24,7 +24,7 @@ import axios from "axios";
 export default {
     props: ["jobid", "favorited"],
     mounted() {
-        this.show = this.jobFavorited ? ture : false;
+        this.show = this.jobFavorited ? true : false;
     },
     data() {
         return {

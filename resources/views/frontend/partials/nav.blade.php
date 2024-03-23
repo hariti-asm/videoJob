@@ -39,6 +39,7 @@
                         @if (Auth::user()->user_type==='employer' || Auth::user()->user_type==='seeker')
                         <li class="has-children">
                           <a href="/home">Dashboard</a>
+                          <?php echo Auth::user()->user_type ?>
                           <ul class="dropdown arrow-top">
 
                             @if (Auth::user()->user_type==='employer')
