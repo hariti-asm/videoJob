@@ -3,7 +3,7 @@
 
   <div style="height: 94px;"></div>
 
-<div class="unit-5 overlay" style="background-image: url({{ asset('external/images/hero_2.jpg') }});">
+<div class="unit-5 overlay" style="background-image: url({{ asset('backend/external/images/hero_2.jpg') }});">
   <div class="container text-center">
     <h1 class="mb-0" style="    color: #fff;
     font-size: 1.5rem;">{{$job->title}}</h1>
@@ -152,10 +152,10 @@
 
             @if (!Auth::check() )
 
-              <p><a href="{{route('register')}}" class="btn btn-dark" style="width: 100%;">For apply need to Register/Login.</a></p>
+              <p><a href="/register" class="btn btn-dark" style="width: 100%;">For apply need to Register/Login.</a></p>
 
             @endif
-          <p><a href="{{route('applicant')}}" class="btn btn-primary  py-2 px-4">Apply Job</a></p>
+          {{-- <p><a href="#" class="btn btn-primary  py-2 px-4">Apply Job</a></p> --}}
         </div>
       </div>
     </div>
