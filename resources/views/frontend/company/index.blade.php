@@ -3,7 +3,7 @@
 @section('content')
 
 <div style="height: 95px;"></div>
-<div class="unit-5 overlay" style="background-image: url({{ asset('uploads/banner') }}/{{ $company->banner }});">
+<div class="unit-5 overlay" style="background-image: url(/{{ $company->banner }});">
     <div class="container text-center">
       <h1 class="mb-0" style="    color: #fff;
       font-size: 2.5rem;">Company name:<strong>&nbsp;{{ $company->cname }}</strong></h1>
@@ -28,7 +28,7 @@
                 <div class="d-flex align-items-center">
                     @if ($company->logo)
                     
-                    <img src="{{ asset('uploads/logo') }}/{{ $company->logo }}" style="width:100px; height:100px;border-radius:100px;object-fit: cover;" class="border  mb-3" alt="">
+                    <img src="{{ asset($company->logo) }}" style="width:100px; height:100px; border-radius:100px; object-fit:cover;" class="border mb-3" alt="">
                     @endif
         
                     <h3 class="mx-4 mb-0">Company name:<strong>&nbsp;{{ $company->cname }}</strong> </h3>

@@ -138,5 +138,9 @@ class CompanyController extends Controller
         return view('frontend.company.company', compact('companies'));
     }
 
- 
+    public function show(Company $company)
+    {
+        
+                return view('frontend.company.index', compact('company'));
+    }
 }

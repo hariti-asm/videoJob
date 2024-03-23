@@ -81,6 +81,7 @@ Route::post('/company/logo', [CompanyController::class, 'logo'])->name('logo');
 Route::post('/company/banner', [CompanyController::class, 'banner'])->name('banner');
 // Employer 
 Route::view('employer/register', 'auth.employer-register')->name('employer.register');
+
 Route::post('employer/register', [EmployerRegisterController::class, 'employerRegister'])->name('empl.register');
 
 // Applicant

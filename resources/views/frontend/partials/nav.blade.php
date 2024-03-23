@@ -28,7 +28,7 @@
                   <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                   <ul class="site-menu js-clone-nav d-none d-lg-block">
-         {{-- @dd(Auth::user()); --}}
+         
                     <li class="{{ request()->routeIs('company') ? 'active' : '' }}"><a href="{{ route('company') }}">Company</a></li>
                     @if (!Auth::check())
                     <li class="{{ request()->routeIs('/register') ? 'active' : '' }}"><a href="/register">For Job Seeker</a></li>
@@ -39,7 +39,7 @@
                         @if (Auth::user()->user_type==='employer' || Auth::user()->user_type==='seeker')
                         <li class="has-children">
                           <a href="/home">Dashboard</a>
-                          
+                          <?php echo Auth::user()->user_type ?>
                           <ul class="dropdown arrow-top">
 
                             @if (Auth::user()->user_type==='employer')
@@ -62,8 +62,7 @@
                             @endif
 
                             @if (Auth::user()->user_type==='seeker')
-                            {{-- {{ route('user.profile') }}"> --}}
-                            <li><a  href="">
+                            <li><a  href="{{ route('profile.edit') }}">
                                 {{ __('Profile') }}
                             </a></li>
                             <li><a  href="{{ route('home') }}">
@@ -136,8 +135,7 @@
         <div class="card">
        
             <div class="card-body">
-              {{-- {{ route('login') }} --}}
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('login') }}">
                     @csrf
                       
                     <div class="row mb-3">

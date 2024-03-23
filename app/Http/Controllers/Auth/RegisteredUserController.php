@@ -33,17 +33,30 @@ class RegisteredUserController extends Controller
      */
   
 
-     public function store(RegisterRequest $request): RedirectResponse
+     public function store(Request $request): RedirectResponse
      { 
-         $request->validated();
-     
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique(User::class)->ignore(auth()->id())],
+            'address' => ['required', 'string'],
+            'gender' => ['required', 'string', Rule::in(['male', 'female'])],
+            'dob' => ['required', 'date'],
+            'experience' => ['required', 'string'],
+            'phone' => ['required', 'string'],
+            'bio' => ['required', 'string'],
+            'status' => ['required'],
+            'cover_letter' => ['required'],
+            'resume' => ['required'],
+            'avatar' => ['required'],
+        ]);
+         
          if ($request->hasFile('avatar')) {
              $fileNameToStoreAvatar = $this->uploadFileAndGetFileName($request->file('avatar'), 'public/avatars');
          }
      
          if ($request->hasFile('resume')) {
              $fileNameToStoreResume = $this->uploadFileAndGetFileName($request->file('resume'), 'public/resumes');
-         }
+            }
      
          if ($request->hasFile('cover_letter')) {
              $fileNameToStoreCoverLetter = $this->uploadFileAndGetFileName($request->file('cover_letter'), 'public/cover_letters');

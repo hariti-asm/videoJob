@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('category_id');
             $table->string('position');
             $table->string('address');
-            $table->integer('featured');
+            $table->integer('featured')->nullable();
             $table->string('type');
             $table->integer('status');
             $table->date('last_date');

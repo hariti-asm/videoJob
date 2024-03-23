@@ -22,7 +22,7 @@
                 <div class="card-header text-center"><h3 class="mt-1">{{ __('Employer Register') }}</h3></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('empl.register') }}">
+                    <form method="POST" action="{{ route('empl.register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <input type="hidden" id="user_type" name="user_type" value="employer">
@@ -78,6 +78,91 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password">
                             </div>
                         </div>
+
+                        <!-- Additional fields for company information -->
+                        <div class="row mb-3">
+                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" autocomplete="address">
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" autocomplete="phone">
+                                @error('phone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="website" class="col-md-4 col-form-label text-md-end">{{ __('Website') }}</label>
+                            <div class="col-md-6">
+                                <input id="website" type="text" class="form-control @error('website') is-invalid @enderror" name="website" value="{{ old('website') }}" autocomplete="website">
+                                @error('website')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="logo" class="col-md-4 col-form-label text-md-end">{{ __('Logo') }}</label>
+                            <div class="col-md-6">
+                                <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror" name="logo">
+                                @error('logo')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="banner" class="col-md-4 col-form-label text-md-end">{{ __('Banner') }}</label>
+                            <div class="col-md-6">
+                                <input id="banner" type="file" class="form-control @error('banner') is-invalid @enderror" name="banner">
+                                @error('banner')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="slogan" class="col-md -md-4 col-form-label text-md-end">{{ __('Slogan') }}</label>
+                            <div class="col-md-6">
+                                <input id="slogan" type="text" class="form-control @error('slogan') is-invalid @enderror" name="slogan" value="{{ old('slogan') }}" autocomplete="slogan">
+                                @error('slogan')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
+                            <div class="col-md-6">
+                                <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="description">{{ old('description') }}</textarea>
+                                @error('description')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
  
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -95,3 +180,4 @@
 </div>
 
 @endsection
+

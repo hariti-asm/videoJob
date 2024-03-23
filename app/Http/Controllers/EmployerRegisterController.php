@@ -8,41 +8,57 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use App\Http\Requests\RegisterCompanyRequest;
+
 
 class EmployerRegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function employerRegister(Request $request)
-    {
+    // use Illuminate\Support\Facades\Route;
 
 
-        $request->validate([
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'cname'=> 'required|unique:companies,cname|max:50',
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+public function employerRegister(RegisterCompanyRequest $request)
+{
+    // Create a new user
+    $user = User::create([
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'user_type' => $request->user_type,
+        'status' => '1',
+    ]);
 
-
-        $user =  User::create([
-            'email' => request('email'),
-            'password' => Hash::make(request('password')),
-            'user_type' => request('user_type'),
-            'status' => '1',
-        ]);
-
-
-        Company::create([
-            'user_id'=>$user->id,
-            'cname'=> request('cname'),
-            'slug'=> Str::slug(request('cname'))
-        ]);
-
-        // $user->sendEmailVerificationNotification();
-
-        return redirect()->back()->with('message', 'A verification link is sent to your email. Please follow the link to verify it.');
+    // Upload logo if provided
+    $logoPath = null;
+    if ($request->hasFile('logo')) {
+        $logoPath = $request->file('logo')->store('public/logos');
     }
+
+    // Upload banner if provided
+    $bannerPath = null;
+    if ($request->hasFile('banner')) {
+        $bannerPath = $request->file('banner')->store('public/banners');
+    }
+
+    $company = Company::create([
+        'user_id' => $user->id,
+        'cname' => $request->cname,
+        'slug' => Str::slug($request->cname),
+        'address' => $request->address,
+        'phone' => $request->phone,
+        'website' => $request->website,
+        'logo' => $logoPath,
+        'banner' => $bannerPath,
+        'slogan' => $request->slogan,
+        'description' => $request->description,
+    ]);
+
+    return redirect()->route('company.index', ['id' => $company->id, 'company' => $company])
+                     ->with('message', 'A verification link is sent to your email. Please follow the link to verify it.');
+}
+    
+    
 
 
 }
