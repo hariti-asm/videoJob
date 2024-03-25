@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 //     return view("auth.register");
 // })->name('register');
 
-Route::middleware('admin')->prefix('dashboard')->group(function () { 
+Route::prefix('dashboard')->group(function () { 
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard'); 
     Route::get('/admins', [DashboardController::class, 'adminlist'])->name('dashboard.admin'); 
     Route::get('/job/show/{id}', [DashboardController::class, 'show'])->name('adminShow');

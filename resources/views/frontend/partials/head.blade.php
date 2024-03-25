@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Work+Sans:300,400,700" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="{{ asset('backend/backend/fonts/icomoon/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('backend/backend/fonts/icomoon/style.css') }}"> --}}
 
     <link rel="stylesheet" href="{{ asset('backend/external/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/external/css/magnific-popup.css') }}">
