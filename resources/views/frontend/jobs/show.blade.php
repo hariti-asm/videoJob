@@ -105,7 +105,7 @@
             
           </div>
           <div class=" mb-8 bg-white">
-            <h3 class="h5 text-black mb-3"><i class="icon-genderless" style="color: #28a745;">&nbsp;</i>Gender</h3>
+            <h3 class="h5 text-black mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><g fill="#28a745"><path d="M154.91 202.91a72 72 0 1 1 0-101.82a72 72 0 0 1 0 101.82" opacity="0.2"/><path d="M216 32h-48a8 8 0 0 0 0 16h28.69l-42.07 42.07a80 80 0 1 0 11.31 11.31L208 59.32V88a8 8 0 0 0 16 0V40a8 8 0 0 0-8-8m-66.76 165.29a64 64 0 1 1 0-90.53a64.1 64.1 0 0 1 0 90.53"/></g></svg>Gender</h3>
             <p> {{  Str::ucfirst($job->gender)}}</p>
             
           </div>

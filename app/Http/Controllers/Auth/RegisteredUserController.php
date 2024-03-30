@@ -50,7 +50,7 @@ class RegisteredUserController extends Controller
             'avatar' => ['required'],
         ]);
          
-         if ($request->hasFile('avatar')) {
+         if ($request->hasFile('avatar')) { 
              $fileNameToStoreAvatar = $this->uploadFileAndGetFileName($request->file('avatar'), 'public/avatars');
          }
      

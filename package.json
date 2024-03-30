@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^5.0.4",
-        "vue": "^3.4.20"
+        "vue": "^3.4.20",
+        "vue-media-recorder": "^0.1.25"
     }
 }

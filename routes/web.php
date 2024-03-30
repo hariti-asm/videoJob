@@ -10,6 +10,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\VideoController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +34,13 @@ require __DIR__.'/auth.php';
 
 
 Route::view('demo', 'demo');
+Route::resource('video', VideoController::class);
 
+Route::post('/save', function (Request $request) {
+    $path =  \Storage::disk('public')->put('videos',$request->video);
+    $url = \Storage::disk('public')->url($path);
+    return $url;
+});
 
 // Auth routes 
 //  Auth::routes(['verify' => true]);
@@ -40,6 +48,9 @@ Route::view('demo', 'demo');
 // Route::get('/email/verify', function () {
 //     return view('auth.verify-email');
 // })->middleware('auth')->name('verification.notice');
+Route::get('/records',function(){
+    return view('records');
+});
 
 // Home Routes
 Route::get('/', [JobController::class, 'index']);

@@ -119,28 +119,33 @@
 
     <div class="d-block d-md-flex border-bottom">
       <div class="text-center p-4 item border-right" data-aos="fade">
-        <span class="flaticon-worker display-3 mb-3 d-block text-primary"></span>
-        <h2 class="h4">More Jobs Every Day</h2>
+        <svg  class=" my-3" xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 256 256">
+          <path fill="#28a745" d="M256 208v-16h-16.808a39.744 39.744 0 0 0-5.856-13.968l11.92-11.92l-11.192-11.192l-11.92 11.92A39.688 39.688 0 0 0 208 134.808V118h-16v16.808a39.744 39.744 0 0 0-13.968 5.856l-11.92-11.92l-11.192 11.192l11.92 11.92A39.688 39.688 0 0 0 134.808 192H118v16h16.808c.208 1.008.608 1.832 1.168 2.592l-11.92 11.92l11.192 11.192l11.92-11.92a39.744 39.744 0 0 0 5.856 5.856l11.92 11.92l11.192-11.192l-11.92-11.92A39.688 39.688 0 0 0 239.192 208zm-56 16c-13.232 0-24-10.768-24-24s10.768-24 24-24s24 10.768 24 24s-10.768 24-24 24m-40-88h-64a16 16 0 0 1-16-16V32a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v96a16 16 0 0 1-16 16m-64-16h64V32h-64z"/>
+          <path fill="#28a745" d="M136 168H64a16 16 0 0 1-16-16V56h16v96h72z"/>
+          <path fill="#28a745" d="M104 200H32c-8.816 0-16-7.184-16-16V88h16v96h72z"/>
+          <!-- Plus Mince -->
+          <path fill="#28a745" d="M160 112H96a8 8 0 0 1 0-16h64a8 8 0 0 1 0 16z"/>
+          <path fill="#28a745" d="M128 144V80a8 8 0 0 1 16 0v64a8 8 0 0 1-16 0z"/>
+        </svg>
+        
+                <h2 class="h4">More Jobs Every Day</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
         <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
       </div>
       <div class="text-center p-4 item" data-aos="fade">
-        <span class="flaticon-wrench display-3 mb-3 d-block text-primary"></span>
-        <h2 class="h4">Creative Jobs</h2>
+        <svg class=" my-3" xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><path fill="#28a745" d="M11.5 4a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7M6 7.5a5.5 5.5 0 1 1 11 0a5.5 5.5 0 0 1-11 0M8 16a4 4 0 0 0-4 4h8.05v2H2v-2a6 6 0 0 1 6-6h4v2zm11.5-3.25v1.376c.715.184 1.352.56 1.854 1.072l1.193-.689l1 1.732l-1.192.688a4.008 4.008 0 0 1 0 2.142l1.192.688l-1 1.732l-1.193-.689a4 4 0 0 1-1.854 1.072v1.376h-2v-1.376a3.996 3.996 0 0 1-1.854-1.072l-1.193.689l-1-1.732l1.192-.688a4.004 4.004 0 0 1 0-2.142l-1.192-.688l1-1.732l1.193.688a3.996 3.996 0 0 1 1.854-1.071V12.75zm-2.751 4.283a1.991 1.991 0 0 0-.25.967c0 .35.091.68.25.967l.036.063a1.999 1.999 0 0 0 3.43 0l.036-.063c.159-.287.249-.616.249-.967c0-.35-.09-.68-.249-.967l-.036-.063a1.999 1.999 0 0 0-3.43 0z"/></svg>        <h2 class="h4">Creative Jobs</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
         <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
       </div>
     </div>
     <div class="d-block d-md-flex">
       <div class="text-center p-4 item border-right" data-aos="fade">
-        <span class="flaticon-stethoscope display-3 mb-3 d-block text-primary"></span>
-        <h2 class="h4">Healthcare</h2>
+        <svg class="my-2" xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><g fill="none" stroke="#28a745" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m18 20l3.824-3.824a.6.6 0 0 0 .176-.424V10.5A1.5 1.5 0 0 0 20.5 9v0a1.5 1.5 0 0 0-1.5 1.5V15"/><path d="m18 16l.858-.858a.484.484 0 0 0 .142-.343v0a.485.485 0 0 0-.268-.433l-.443-.221a2 2 0 0 0-2.308.374l-.895.895a2 2 0 0 0-.586 1.414V20M6 20l-3.824-3.824A.6.6 0 0 1 2 15.752V10.5A1.5 1.5 0 0 1 3.5 9v0A1.5 1.5 0 0 1 5 10.5V15"/><path d="m6 16l-.858-.858A.485.485 0 0 1 5 14.799v0c0-.183.104-.35.268-.433l.443-.221a2 2 0 0 1 2.308.374l.895.895a2 2 0 0 1 .586 1.414V20m4.167-8h-3.334V9.667H8V6.333h2.333V4h3.334v2.333H16v3.334h-2.333z"/></g></svg>        <h2 class="h4">Healthcare</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
         <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
       </div>
       <div class="text-center p-4 item" data-aos="fade">
-        <span class="flaticon-calculator display-3 mb-3 d-block text-primary"></span>
-        <h2 class="h4">Finance &amp; Accounting</h2>
+        <svg class="my-3" xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 24 24"><path fill="#28a745" d="m6 16.5l-3 2.94V11h3m5 3.66l-1.57-1.34L8 14.64V7h3m5 6l-3 3V3h3m2.81 9.81L17 11h5v5l-1.79-1.79L13 21.36l-3.47-3.02L5.75 22H3l6.47-6.34L13 18.64"/></svg>        <h2 class="h4">Finance &amp; Accounting</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reprehenderit explicabo quos fugit vitae dolorum.</p>
         <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
       </div>

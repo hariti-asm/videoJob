@@ -31,7 +31,7 @@
 
     <!--====== Style css ======-->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('backend/assets/css/sidebar.css') }}">
+        <link rel="stylesheet" href="{{ asset('backend/assets/css/sidebar.css') }}">
 	   <!--====== Responsive css ======-->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/responsive.css') }}">
 
