@@ -1,24 +1,30 @@
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.main')
 
-        <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('File Upload') }}</div>
 
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
+                <div class="card-body">
+                    <form action="{{ route('video.store') }}" method="post" enctype="multipart/form-data">
+                        @csrf
 
-                <h1>File Upload</h1>
-                <form action="{{ route('video.store') }}" method="post" enctype="multipart/form-data">
-                    <label>Select video to upload:</label>
-                    <input type="file" name="file" id="file">
-                    <input type="submit" value="Upload" name="submit">
-                    @csrf
-                </form>
-                
+                        <div class="form-group">
+                            <label for="file">{{ __('Select video to upload:') }}</label>
+                            <input type="file" name="file" id="file" class="form-control-file">
+                        </div>
 
+                        <div class="form-group">
+                            <input type="submit" value="{{ __('Upload') }}" name="submit" class="btn btn-primary">
+                        </div>
+
+                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
+                    </form>
+                </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+@endsection

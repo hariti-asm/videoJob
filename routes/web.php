@@ -35,6 +35,8 @@ require __DIR__.'/auth.php';
 
 Route::view('demo', 'demo');
 Route::resource('video', VideoController::class);
+Route::post('/video/{video}/transcribe', [VideoController::class, 'transcribe'])->name('video.transcribe');
+// Route::get('/transcribe', [VideoController::class, 'transcribe'])->name('video.transcribe');
 
 Route::post('/save', function (Request $request) {
     $path =  \Storage::disk('public')->put('videos',$request->video);
@@ -42,15 +44,14 @@ Route::post('/save', function (Request $request) {
     return $url;
 });
 
-// Auth routes 
-//  Auth::routes(['verify' => true]);
-
-// Route::get('/email/verify', function () {
-//     return view('auth.verify-email');
-// })->middleware('auth')->name('verification.notice');
 Route::get('/records',function(){
     return view('records');
 });
+Route::get('/videos',function(){
+    return view('videos');
+});
+Route::get('/videos', [VideoController::class, 'index']);
+
 
 // Home Routes
 Route::get('/', [JobController::class, 'index']);

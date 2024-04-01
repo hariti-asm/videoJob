@@ -7,6 +7,9 @@
 import './bootstrap';
 import { createApp } from 'vue';
 
+
+
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -19,13 +22,11 @@ import ExampleComponent from './components/ExampleComponent.vue';
 import ApplyComponent from './components/ApplyComponent.vue';
 import FavoriteComponent from './components/FavoriteComponent.vue';
 import SearchComponent from './components/SearchComponent.vue';
-import RecordComponent from './components/RecordComponent.vue';
 
 app.component('example-component', ExampleComponent);
 app.component('apply-component', ApplyComponent);
 app.component('favorite-component', FavoriteComponent);
 app.component('search-component', SearchComponent);
-app.component('record-component', RecordComponent);
 
 
 /**
