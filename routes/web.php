@@ -1,19 +1,20 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CompanyController;
-
-use App\Http\Controllers\EmailController;
-use App\Http\Controllers\EmployerRegisterController;
-use App\Http\Controllers\FavoriteController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\JobController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserProfileController;
-use App\Http\Controllers\VideoController;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FavoriteController;
+
+use App\Http\Controllers\RecruiterController;
+use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\EmployerRegisterController;
 
 
 Route::get('/', function () {
@@ -84,7 +85,7 @@ Route::post('/company/banner', [CompanyController::class, 'banner'])->name('bann
 Route::view('employer/register', 'auth.employer-register')->name('employer.register');
 
 Route::post('employer/register', [EmployerRegisterController::class, 'employerRegister'])->name('empl.register');
-
+Route::get('employer/users',[RecruiterController::class,'index'])->name('recruiter.index');
 // Applicant
 Route::post('/applications/{id}', [JobController::class, 'apply'])->name('apply');
 

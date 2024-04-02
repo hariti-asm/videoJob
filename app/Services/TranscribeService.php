@@ -79,6 +79,7 @@ class TranscribeService
                 throw new \Exception("Transcription not found in response");
             }
             $video->transcript = $responseData['text'];
+            $video->status = "done";
 
             $video->save();
     
