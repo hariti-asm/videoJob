@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('title');
            $table->string('path');
            $table->integer(('user_id'));
+           $table->text('transcript')->nullable();
+           $table->string('status')->nullable();
+
             $table->timestamps();
         });
     }

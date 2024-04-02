@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\UploadProcessed;
+use App\Listeners\TranscribeAudio;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Event::listen(
+                UploadProcessed::class,
+                TranscribeAudio::class,
+        );
     }
 }
