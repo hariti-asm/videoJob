@@ -16,6 +16,7 @@ use App\Http\Controllers\RecruiterController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\EmployerRegisterController;
 
+Route::get('/open-ai', [VideoController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');

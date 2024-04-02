@@ -10,19 +10,46 @@ use App\Models\Video;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\JsonResponse;
 class VideoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    // public function index()
+    // {
+    //     $videos = Video::all();
+    //     return view("videos", compact('videos'));
+    // }
+    
+    public function index(): JsonResponse
     {
-        $videos = Video::all();
-        return view("videos", compact('videos'));
+        $search = "how to get a job";
+  
+        $data = Http::withHeaders([
+                    'Content-Type' => 'application/json',
+                    'Authorization' => 'Bearer '.env('OPENAI_API_KEY'),
+                  ])
+                  ->post("https://api.openai.com/v1/chat/completions", [
+                    "model" => "gpt-3.5-turbo",
+                    'messages' => [
+                        [
+                           "role" => "user",
+                           "content" => $search
+                       ]
+                    ],
+                    'temperature' => 0.5,
+                    "max_tokens" => 200,
+                    "top_p" => 1.0,
+                    "frequency_penalty" => 0.52,
+                    "presence_penalty" => 0.5,
+                    "stop" => ["11."],
+                  ])
+                  ->json();
+  
+        return response()->json($data['choices'][0]['message'], 200, array(), JSON_PRETTY_PRINT);
     }
-    
-    
 
     public function store(Request $request)
     {
