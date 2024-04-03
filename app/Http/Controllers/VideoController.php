@@ -23,33 +23,58 @@ class VideoController extends Controller
     //     return view("videos", compact('videos'));
     // }
     
+
+    
+
+    
     public function index(): JsonResponse
     {
-        $search = "how to get a job";
-  
-        $data = Http::withHeaders([
-                    'Content-Type' => 'application/json',
-                    'Authorization' => 'Bearer '.env('OPENAI_API_KEY'),
-                  ])
-                  ->post("https://api.openai.com/v1/chat/completions", [
-                    "model" => "gpt-3.5-turbo",
-                    'messages' => [
-                        [
-                           "role" => "user",
-                           "content" => $search
-                       ]
-                    ],
-                    'temperature' => 0.5,
-                    "max_tokens" => 200,
-                    "top_p" => 1.0,
-                    "frequency_penalty" => 0.52,
-                    "presence_penalty" => 0.5,
-                    "stop" => ["11."],
-                  ])
-                  ->json();
-  
-        return response()->json($data['choices'][0]['message'], 200, array(), JSON_PRETTY_PRINT);
+        $videos = Video::all();
+         $search="make the summary of each transcript";
+        $transcriptsWithSummaries = [];
+            foreach ($videos as $video) {
+            $transcript = $video->transcript;
+    
+            $response = Http::withHeaders([
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . env('OPENAI_API_KEY'),
+            ])->post("https://api.openai.com/v1/chat/completions", [
+                "model" => "gpt-3.5-turbo",
+                'messages' => [
+                    [
+                        "role" => "user",
+                        "content" =>"make the summary of each the given transcript including full name,experience,age,educations,profesional history,speaking , at the end tell me about his/her speaking skills". $transcript
+                    ]
+                ],
+                'temperature' => 0.5,
+                "max_tokens" => 200,
+                "top_p" => 1.0,
+                "frequency_penalty" => 0.52,
+                "presence_penalty" => 0.5,
+                "stop" => ["11."],
+            ]);
+    
+            if ($response->successful()) {
+                $responseData = $response->json();
+                if (isset($responseData['choices'])) {
+                    $summary = $responseData['choices'][0]['message'];
+                } else {
+                    \Log::error('Unexpected response format: ' . json_encode($responseData));
+                    continue; 
+                }
+    
+                $transcriptsWithSummaries[] = [
+                    'transcript' => $transcript,
+                    'summary' => $summary,
+                ];
+            } else {
+                \Log::error('API request failed: ' . $response->status());
+            }
+        }
+    
+        return response()->json($transcriptsWithSummaries, 200, [], JSON_PRETTY_PRINT);
     }
+    
 
     public function store(Request $request)
     {
