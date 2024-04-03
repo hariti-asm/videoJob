@@ -10,7 +10,7 @@ class Video extends Model
     use HasFactory;
     protected $table = 'videos';
   protected $fillable = [
-      'title', 'path','user_id','transcript','status'
+      'title', 'path','user_id','transcript','summary','status'
   ];
   public function user(){
     return $this->belongsTo(User::class);

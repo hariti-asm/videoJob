@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SummaryProcessed;
 use App\Events\UploadProcessed;
 use App\Models\rc;
 use Illuminate\Http\Request;
@@ -100,7 +101,8 @@ class VideoController extends Controller
             ]);
             
             Session::flash('success', 'File uploaded successfully!');
-          UploadProcessed::dispatch($video);
+            UploadProcessed::dispatch($video);
+            SummaryProcessed::dispatch($video);
             return redirect()->back();
         } else {
             Session::flash('error', 'No file uploaded!');

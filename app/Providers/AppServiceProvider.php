@@ -1,9 +1,12 @@
-<?php
+<?php 
+
 
 namespace App\Providers;
 
+use App\Events\SummaryProcessed;
 use App\Events\UploadProcessed;
 use App\Listeners\TranscribeAudio;
+use App\Listeners\TranscriptSummary;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Event;
 
@@ -23,8 +26,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Event::listen(
-                UploadProcessed::class,
-                TranscribeAudio::class,
+            UploadProcessed::class,
+            TranscribeAudio::class
+        );
+
+        Event::listen(
+            SummaryProcessed::class,
+            TranscriptSummary::class
         );
     }
 }
