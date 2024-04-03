@@ -5,6 +5,14 @@
 <div class="container">
     <div class="row justify-content-center mb-12">
         <div class="col-md-8">
+            @if(Session::has('success'))
+            <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+            @endif
+            @if($errors->has('file'))
+            <div class="alert alert-danger" role="alert">
+                {{ $errors->first('file') }}
+            </div>
+            @endif
             <div class="card">
                 <div class="card-header">{{ __('File Upload') }}</div>
                 <div class="card-body">
@@ -19,8 +27,5 @@
             </div>
         </div>
     </div>
-    @if(Session::has('success'))
-    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-    @endif
 </div>
 @endsection
