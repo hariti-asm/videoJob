@@ -89,11 +89,15 @@
 
 
                     @if (!Auth::check())
-                      <li>
-                        <a href="#" data-bs-target="#login-modal" data-toggle="modal" data-target="#login-modal" ><span class="bg-primary text-white py-3 px-3 rounded">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="M12 21v-2h7V5h-7V3h7q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm-2-4l-1.375-1.45l2.55-2.55H3v-2h8.175l-2.55-2.55L10 7l5 5z"/></svg>
-                          Login</span></a>
-                      </li>
+                    <li class="">
+                      <a href="#" data-bs-target="#login-modal" data-toggle="modal" data-target="#login-modal" class="bg-primary text-white py-3 px-3 rounded d-flex align-items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="mr-2">
+                              <path fill="white" d="M12 21v-2h7V5h-7V3h7q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm-2-4l-1.375-1.45l2.55-2.55H3v-2h8.175l-2.55-2.55L10 7l5 5z"/>
+                          </svg>
+                          <span>Login</span>
+                      </a>
+                  </li>
+                  
                     @else
                       <li>
                         <a class="bg-primary text-white py-3 px-3 rounded" href="{{ route('logout') }}"
@@ -197,10 +201,7 @@
             </div>
         </div>
       </div>
-      {{-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> --}}
+    
     </div>
   </div>
 </div>
