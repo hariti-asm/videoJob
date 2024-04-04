@@ -13,9 +13,14 @@
                 {{ $errors->first('file') }}
             </div>
             @endif
+            <p class="instruction-text bg-gray-200 text-gray-800 p-4 rounded my-4">
+                Please record a video of yourself talking about your full name, age, gender, education, and professional experience.
+            </p>
+            
             <div class="card">
                 <div class="card-header">{{ __('File Upload') }}</div>
                 <div class="card-body">
+            
                     <form action="{{ route('video.store') }}" method="post" enctype="multipart/form-data" id="video-upload-form">
                         @csrf
                         <label for="file">{{ __('Select video to upload:') }}</label>
@@ -30,17 +35,5 @@
         </div>
     </div>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get the URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        
-        // Get the job_id parameter from the URL
-        const jobId = urlParams.get('job_id');
-        
-        // Set the value of the job_id hidden input field
-        document.getElementById('job_id').value = jobId;
-    });
-</script>
 
 @endsection

@@ -36,9 +36,10 @@ require __DIR__.'/auth.php';
 
 
 Route::view('demo', 'demo');
-Route::resource('video', VideoController::class);
+// Route::resource('video', VideoController::class);
 Route::post('/video/{video}/transcribe', [VideoController::class, 'transcribe'])->name('video.transcribe');
 // Route::get('/transcribe', [VideoController::class, 'transcribe'])->name('video.transcribe');
+ Route::post('/store', [VideoController::class, 'store'])->name('video.store');
 
 Route::post('/save', function (Request $request) {
     $path =  \Storage::disk('public')->put('videos',$request->video);

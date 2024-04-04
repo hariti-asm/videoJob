@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\rc;
 use App\Models\Video; 
+use App\Models\Job; 
+
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Events\ApplyProcessed;
@@ -80,12 +82,13 @@ class VideoController extends Controller
     }
     
 
-    public function store(Request $request)
+    public function store(Request $request , Job $job)
     {  
         $request->validate([
             'file' => 'required|file|mimes:mp4', 
             'job_id'=>['required'],
         ]);
+        // $data['job_id']=$job->id;
     
         if ($request->hasFile('file')) {
             $file = $request->file('file');
