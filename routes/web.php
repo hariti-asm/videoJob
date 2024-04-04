@@ -46,9 +46,8 @@ Route::post('/save', function (Request $request) {
     return $url;
 });
 
-Route::get('/records',function(){
-    return view('records');
-});
+Route::get('/records/{job}', [JobController::class, 'record'])->name('apply.automatic');
+
 Route::get('/videos',function(){
     return view('videos');
 });
@@ -57,7 +56,9 @@ Route::get('/videos', [VideoController::class, 'index']);
 
 // Home Routes
 Route::get('/', [JobController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/savedJobs ', [HomeController::class, 'index'])->name('home');
+Route::get('/appliedJobs', [HomeController::class, 'appliedJobs'])->name('appliedJobs');
+
 Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
 Route::post('/jobs/create', [JobController::class, 'store'])->name('job.store');
 Route::get('/job/{id}/edit', [JobController::class, 'edit'])->name('job.edit');

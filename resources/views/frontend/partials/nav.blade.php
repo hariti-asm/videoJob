@@ -68,6 +68,9 @@
                             <li><a  href="{{ route('home') }}">
                                 {{ __('Saved Jobs') }}
                             </a></li>
+                            <li><a  href="{{ route('appliedJobs') }}">
+                              {{ __('applied Jobs') }}
+                          </a></li>
                             @endif
 
 

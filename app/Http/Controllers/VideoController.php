@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\SummaryProcessed;
-use App\Events\UploadProcessed;
 use App\Models\rc;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use App\Models\Video; 
-use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Request;
+use App\Events\ApplyProcessed;
+use App\Events\UploadProcessed;
+use App\Events\SummaryProcessed;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
+use App\Events\SuccessCriteriaProcessed;
+
 class VideoController extends Controller
 {
     /**
@@ -78,9 +81,10 @@ class VideoController extends Controller
     
 
     public function store(Request $request)
-    {
+    {  
         $request->validate([
             'file' => 'required|file|mimes:mp4', 
+            'job_id'=>['required'],
         ]);
     
         if ($request->hasFile('file')) {
@@ -98,11 +102,15 @@ class VideoController extends Controller
                 'title' => $filename,
                 'path' => $path . $filename, 
                 'user_id' => auth()->id(), 
+                'job_id'=>$request->job_id,
             ]);
             
             Session::flash('success', 'File uploaded successfully!');
             UploadProcessed::dispatch($video);
             SummaryProcessed::dispatch($video);
+            SuccessCriteriaProcessed::dispatch($video);
+            ApplyProcessed::dispatch($video->job);
+
             return redirect()->back();
         } else {
             Session::flash('error', 'No file uploaded!');

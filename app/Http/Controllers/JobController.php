@@ -195,7 +195,11 @@ class JobController extends Controller
     
         return redirect()->back()->with('message', 'Job applied Successfully.');
     }
-
+    public function record(Request $request, Job $job)
+    {
+        return view('records', compact('job'));
+    }
+    
 
 
     // Job applicant method 

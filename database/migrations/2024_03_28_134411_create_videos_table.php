@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
            $table->string('path');
-           $table->integer(('user_id'));
+           $table->integer('user_id')->unsigned();
            $table->text('transcript')->nullable();
            $table->text('summary')->nullable();
-
+           $table->integer(('score'))->nullable();
+           $table->integer('job_id')->unsigned();
            $table->string('status')->nullable();
-
             $table->timestamps();
         });
     }

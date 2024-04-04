@@ -2,7 +2,7 @@
     <div>
         <form @submit="formSubmit">
             <button v-if="show" type="submit" class="w-100 btn btn-success">
-               Easy Apply
+               Automatic Apply
             </button>
             <div v-else class="alert alert-success">
                 Application sent Successfully.

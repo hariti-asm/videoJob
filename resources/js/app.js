@@ -20,11 +20,15 @@ const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
 import ApplyComponent from './components/ApplyComponent.vue';
+import AutomaticApplyComponent from './components/AutomaticApplyComponent.vue';
+
 import FavoriteComponent from './components/FavoriteComponent.vue';
 import SearchComponent from './components/SearchComponent.vue';
 
 app.component('example-component', ExampleComponent);
 app.component('apply-component', ApplyComponent);
+app.component('automatic-apply-component', AutomaticApplyComponent);
+
 app.component('favorite-component', FavoriteComponent);
 app.component('search-component', SearchComponent);
 

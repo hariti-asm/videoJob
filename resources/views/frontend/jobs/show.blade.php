@@ -139,6 +139,9 @@
                     <apply-component jobid={{ $job->id }}></apply-component>
 
                   </p>
+                  <p>
+                    <a href="{{ route('apply.automatic', [$job]) }}">Automatic</a>
+                  </p>
                       
                   @else
                       <p> <button type="button" class="w-100 text-black btn btn-warning " disabled>Already applied</button></p>

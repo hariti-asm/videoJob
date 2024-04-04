@@ -16,16 +16,31 @@
             <div class="card">
                 <div class="card-header">{{ __('File Upload') }}</div>
                 <div class="card-body">
-                    <form action="{{ route('video.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('video.store') }}" method="post" enctype="multipart/form-data" id="video-upload-form">
                         @csrf
                         <label for="file">{{ __('Select video to upload:') }}</label>
                         <input type="file" name="file" id="file" class="form-control-file">
-                        <input type="submit" value="{{ __('Upload') }}" name="submit" class="bg-[#28a745]  hover:bg-[#28a745] text-white font-bold py-1 px-6 my-2  rounded">
+                        <input type="submit" value="{{ __('Upload') }}" name="submit" class="bg-[#28a745] hover:bg-[#28a745] text-white font-bold py-1 px-6 my-2 rounded">
                         <input type="hidden" name="user_id" value="{{ auth()->id() }}">
+                        <input type="hidden" name="job_id" value="{{$job->id}}">
                     </form>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Get the job_id parameter from the URL
+        const jobId = urlParams.get('job_id');
+        
+        // Set the value of the job_id hidden input field
+        document.getElementById('job_id').value = jobId;
+    });
+</script>
+
 @endsection
