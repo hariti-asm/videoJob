@@ -59,7 +59,7 @@
                                         @endforeach
                                     </td>
                                     <td class="px-4 py-3 text-sm border">
-                                        &nbsp;<a href="" class="btn btn-secondary btn-sm">see</a>
+                                        &nbsp;<a href="{{ route('applicant_data',  $user)}}" class="btn btn-secondary btn-sm">see</a>
 
                                     </td>
                                     <td class="px-4 py-3 text-sm border ">

@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\JobPostRequest;
-use App\Models\Category;
-use App\Models\Company;
 use App\Models\Job;
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Video;
+use App\Models\Company;
+use App\Models\Category;
 use App\Models\Testimonial;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
+use App\Http\Requests\JobPostRequest;
+
 class JobController extends Controller
 {
 
@@ -249,5 +252,10 @@ class JobController extends Controller
         return redirect('/jobs/create')->with('success', 'Job Deleted Successfully!');
     }
 
-
+    public function applicant_data(User $user){
+   
+        $applicant = Video::where('user_id', $user->id)->get();
+        return view('frontend.jobs.applicant_data', compact('applicant'));
+    }
+    
 }
