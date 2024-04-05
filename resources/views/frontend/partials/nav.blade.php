@@ -56,9 +56,9 @@
                               </a>
                             </li>
 
-                            <li><a  href="{{ route('applicant') }}">
-                                {{ __('Applicants') }}
-                            </a></li>
+                            
+                         
+                          
                             @endif
 
                             @if (Auth::user()->user_type==='seeker')

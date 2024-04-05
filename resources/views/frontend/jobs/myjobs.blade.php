@@ -29,6 +29,7 @@
                                 <th scope="col">Job posted:</th>
                                 <th scope="col">Status:</th>
                                 <th scope="col">Action:</th>
+                                <th scope="col">Applicants</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -106,6 +107,10 @@
 
 
                                         </td>
+                                     <td>
+                                        &nbsp;<a href="{{ route('applicant', [$job]) }}" class="btn btn-secondary btn-sm">see</a>
+
+                                     </td>
                                     </tr>
                                 @endforeach
                     

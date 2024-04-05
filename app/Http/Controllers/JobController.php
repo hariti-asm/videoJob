@@ -203,14 +203,13 @@ class JobController extends Controller
 
 
     // Job applicant method 
-  public function applicant()
+  public function applicants(Job $job)
 {
     if (Auth::check()) {
         $userId = Auth::user()->id;
 
         if ($userId !== null) {
-            $applicants = Job::has('users')->where('user_id', $userId)->get();
-
+            $applicants = Job::find($job->id)->users()->get();
             return view('frontend.jobs.applicants', compact('applicants'));
         } else {
             return redirect()->route('login')->with('error', 'User ID is missing. Please try again.');

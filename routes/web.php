@@ -65,7 +65,7 @@ Route::post('/job/{id}/edit', [JobController::class, 'update'])->name('job.updat
 Route::post('/job/{id}/delete', [JobController::class, 'deleteJob'])->name('job.delete');
 Route::get('/jobs/myjobs', [JobController::class, 'myjob'])->name('myjobs');
 Route::get('/jobs/alljobs', [JobController::class, 'allJobs'])->name('alljobs');
-Route::get('/jobs/applications', [JobController::class, 'applicant'])->name('applicant');
+Route::get('/jobs/applications/{job}', [JobController::class, 'applicants'])->name('applicant');
 Route::get('/job/{id}/{job}', [JobController::class, 'show'])->name('job.show');
 Route::get('/jobs/toggle/{id}', [JobController::class, 'jobToggle'])->name('job.toggle');
 

@@ -25,7 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'user_type',
-        'status','adress','gender','phone','bio','experience','dob','cover_letter','resume','avatar'
+        'status','adress','gender','phone','bio','experience','dob','cover_letter','resume','avatar','job'
     ];
 
     /**
@@ -71,5 +71,9 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
 
-
+    public function videos()
+    {
+        return $this->hasMany(Video::class, 'user_id');
+    }
+    
 }

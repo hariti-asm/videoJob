@@ -40,6 +40,5 @@ class Job extends Model
     public function checkSaved(){
         return DB::table('favorites')->where('user_id', auth()->user()->id)->where('job_id', $this->id)->exists();
     }
-
-
+   
 }

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('status')->nullable();
             $table->string('address')->nullable();
+            $table->string('job')->nullable();
+
             $table->string('gender')->nullable();
             $table->string('dob')->nullable();
             $table->text('experience')->nullable();
