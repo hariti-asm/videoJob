@@ -39,10 +39,10 @@
                         @if (Auth::user()->user_type==='employer' || Auth::user()->user_type==='seeker')
                         <li class="has-children">
                           <a href="/home">Dashboard</a>
-                          <?php echo Auth::user()->user_type ?>
+                          
                           <ul class="dropdown arrow-top">
-
                             @if (Auth::user()->user_type==='employer')
+                            <?php echo Auth::user()->user_type?>
                             <li><a  href="{{ route('job.create') }}">
                                 {{ __('Create new Job') }}
                               </a>
@@ -62,15 +62,12 @@
                             @endif
 
                             @if (Auth::user()->user_type==='seeker')
-                            <li><a  href="{{ route('profile.edit') }}">
+                            <li><a  href="{{ route('user.profile') }}">
                                 {{ __('Profile') }}
                             </a></li>
                             <li><a  href="{{ route('home') }}">
                                 {{ __('Saved Jobs') }}
                             </a></li>
-                            <li><a  href="{{ route('appliedJobs') }}">
-                              {{ __('applied Jobs') }}
-                          </a></li>
                             @endif
 
 
@@ -92,15 +89,9 @@
 
 
                     @if (!Auth::check())
-                    <li class="">
-                      <a href="#" data-bs-target="#login-modal" data-toggle="modal" data-target="#login-modal" class="bg-primary text-white py-3 px-3 rounded d-flex align-items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="mr-2">
-                              <path fill="white" d="M12 21v-2h7V5h-7V3h7q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm-2-4l-1.375-1.45l2.55-2.55H3v-2h8.175l-2.55-2.55L10 7l5 5z"/>
-                          </svg>
-                          <span>Login</span>
-                      </a>
-                  </li>
-                  
+                      <li>
+                        <a href="#" data-bs-target="#login-modal" data-toggle="modal" data-target="#login-modal" ><span class="bg-primary text-white py-3 px-3 rounded"><span class="icon-sign-in mr-3"></span>Login</span></a>
+                      </li>
                     @else
                       <li>
                         <a class="bg-primary text-white py-3 px-3 rounded" href="{{ route('logout') }}"
@@ -204,7 +195,10 @@
             </div>
         </div>
       </div>
-    
+      {{-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> --}}
     </div>
   </div>
 </div>

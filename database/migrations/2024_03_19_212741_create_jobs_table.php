@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('address');
             $table->integer('featured')->nullable();
             $table->string('type');
-            $table->integer('status');
+            $table->integer('status')->nullable();
             $table->date('last_date');
             $table->integer('number_of_vacancy');
             $table->integer('experience');

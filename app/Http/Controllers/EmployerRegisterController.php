@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Company;
 use App\Models\Profile;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterCompanyRequest;
 
 
@@ -23,10 +24,10 @@ public function employerRegister(RegisterCompanyRequest $request)
 {
     // Create a new user
     $user = User::create([
+         'name'=> $request->cname,
         'email' => $request->email,
         'password' => Hash::make($request->password),
         'user_type' => $request->user_type,
-        'status' => '1',
     ]);
 
     // Upload logo if provided
@@ -53,6 +54,7 @@ public function employerRegister(RegisterCompanyRequest $request)
         'slogan' => $request->slogan,
         'description' => $request->description,
     ]);
+    Auth::login($user);
 
     return redirect()->route('company.index', ['id' => $company->id, 'company' => $company])
                      ->with('message', 'A verification link is sent to your email. Please follow the link to verify it.');

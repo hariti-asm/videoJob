@@ -16,7 +16,6 @@ use App\Http\Controllers\RecruiterController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\EmployerRegisterController;
 
-Route::get('/open-ai', [VideoController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,9 +35,7 @@ require __DIR__.'/auth.php';
 
 
 Route::view('demo', 'demo');
-// Route::resource('video', VideoController::class);
 Route::post('/video/{video}/transcribe', [VideoController::class, 'transcribe'])->name('video.transcribe');
-// Route::get('/transcribe', [VideoController::class, 'transcribe'])->name('video.transcribe');
  Route::post('/store', [VideoController::class, 'store'])->name('video.store');
 
 Route::post('/save', function (Request $request) {
@@ -57,7 +54,7 @@ Route::get('/videos', [VideoController::class, 'index']);
 
 // Home Routes
 Route::get('/', [JobController::class, 'index']);
-Route::get('/savedJobs ', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/appliedJobs', [HomeController::class, 'appliedJobs'])->name('appliedJobs');
 
 Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
@@ -85,7 +82,7 @@ Route::post('/company/create', [CompanyController::class, 'store'])->name('compa
 Route::post('/company/logo', [CompanyController::class, 'logo'])->name('logo');
 Route::post('/company/banner', [CompanyController::class, 'banner'])->name('banner');
 // Employer 
-Route::view('employer/register', 'auth.employer-register')->name('employer.register');
+Route::view('employer/', 'auth.employer-register')->name('employer.register');
 
 Route::post('employer/register', [EmployerRegisterController::class, 'employerRegister'])->name('empl.register');
 Route::get('employer/users',[RecruiterController::class,'index'])->name('recruiter.index');

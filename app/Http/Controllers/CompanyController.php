@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Company;
 use App\Models\Job;
+use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class CompanyController extends Controller
@@ -12,7 +13,7 @@ class CompanyController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['employer', 'verified'], ['except'=> array('index', 'company')]);
+        $this->middleware(['employer'], ['except'=> array('index', 'company')]);
     }
 
 
@@ -21,6 +22,7 @@ class CompanyController extends Controller
      */
     public function index($id, Company $company)
     {   $jobs = Job::where('user_id', $id)->get();
+
         return view('frontend.company.index', compact('company'));
     }
 
@@ -140,7 +142,7 @@ class CompanyController extends Controller
 
     public function show(Company $company)
     {
-        
+
                 return view('frontend.company.index', compact('company'));
     }
 }

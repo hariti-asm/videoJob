@@ -173,8 +173,8 @@
                                         <p class="mb-0">{{ $errors->first('last_date') }}</p>
                                     </div>
                                 @endif
-
                             </div>
+                            
                             
                             <div class="form-group mt-3">
                                 <button class=" btn btn-dark" type="submit">Post job</button>
