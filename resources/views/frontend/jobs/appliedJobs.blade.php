@@ -7,7 +7,7 @@
   <div class="container text-center">
     <h1 class="mb-0" style="    color: #fff;
     font-size: 2.5rem;">Applied jobs</h1>
-    <p class="mb-0 unit-6"><a href="/">Home</a> <span class="sep"> > <a href="{{ route('alljobs') }}">Jobs</a> </span> <span><span class="sep m-0"> ></span> Saved jobs</span></p>
+    <p class="mb-0 unit-6"><a href="/">Home</a> <span class="sep"> > <a href="{{ route('alljobs') }}">Jobs</a> </span> <span><span class="sep m-0"> ></span> Applied jobs</span></p>
   </div>
 </div>
 

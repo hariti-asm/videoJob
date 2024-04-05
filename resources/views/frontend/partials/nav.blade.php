@@ -62,12 +62,15 @@
                             @endif
 
                             @if (Auth::user()->user_type==='seeker')
-                            <li><a  href="{{ route('user.profile') }}">
-                                {{ __('Profile') }}
+                            <li><a  href="{{ route('alljobs') }}">
+                                {{ __('alljobs') }}
                             </a></li>
                             <li><a  href="{{ route('home') }}">
                                 {{ __('Saved Jobs') }}
                             </a></li>
+                            <li><a  href="{{ route('appliedJobs') }}">
+                              {{ __('Applied Jobs') }}
+                          </a></li>
                             @endif
 
 

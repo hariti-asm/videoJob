@@ -57,6 +57,7 @@ Route::get('/', [JobController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/appliedJobs', [HomeController::class, 'appliedJobs'])->name('appliedJobs');
 
+
 Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
 Route::post('/jobs/create', [JobController::class, 'store'])->name('job.store');
 Route::get('/job/{id}/edit', [JobController::class, 'edit'])->name('job.edit');

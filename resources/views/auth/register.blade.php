@@ -75,6 +75,19 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="job" class="col-md-4 col-form-label text-md-end">{{ __('Job') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="job" type="job" class="form-control @error('job') is-invalid @enderror" name="job"  autocomplete="job">
+
+                                @error('job')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>

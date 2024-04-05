@@ -31,7 +31,7 @@
                                     
                                   
                                     <th scope="col">Sl:</th>
-                                    <th scope="col">Nababur:</th>
+                                    <th scope="col">Name:</th>
                                  
                                     <th scope="col">Email:</th>
                                     <th scope="col">Gender:</th>
@@ -48,18 +48,18 @@
                                         <td scope="row">{{ $i }}</td>
                                         <td>{{$user->name }}</td>
                                         <td>{{$user->email}}</td>
-                                        <td>{{$user->profile->gender}}</td>
+                                        <td>{{$user->gender}}</td>
                            
-                                        <td>{{$user->profile->bio}}</td>
+                                        <td>{{$user->bio}}</td>
                             
-                                        @if ($user->profile->cover_letter)
+                                        @if ($user->cover_letter)
                                         <td><a class="badge badge-secondary" target="_blank" href="{{ url('storage/'.$user->profile->cover_letter) }}">Cover letter</a></td>
                                         
                                         @else
                                         <td>Not uploaded</td>
                                         @endif
 
-                                        @if ($user->profile->resume)
+                                        @if ($user->resume)
                                         <td><a class="badge badge-secondary" target="_blank" href="{{ url('storage/'.$user->profile->resume) }}">Resume</a></td>
                                         
                                         @else

@@ -39,6 +39,8 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique(User::class)->ignore(auth()->id())],
             'address' => ['required', 'string'],
+            'job' => ['required', 'string'],
+
             'gender' => ['required', 'string', Rule::in(['male', 'female'])],
             'dob' => ['required', 'date'],
             'experience' => ['required', 'string'],
@@ -69,6 +71,7 @@ class RegisteredUserController extends Controller
              'user_type' => $request->input('user_type'),
              'gender' => $request->input('gender'),
              'address' => $request->input('address'),
+             'job' => $request->input('job'),
              'dob' => $request->input('dob'),
              'experience' => $request->input('experience'),
              'phone' => $request->input('phone'),
