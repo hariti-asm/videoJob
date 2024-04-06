@@ -7,7 +7,7 @@
             <h1 class="mb-0" style="color: #fff; font-size: 2.5rem;">Applicant Video Details</h1>
         </div>
     </div>
-
+{{-- tag --}}
     <div class="site-section bg-light">
         <div class="container">
             <div class="row justify-content-center">
