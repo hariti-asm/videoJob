@@ -15,7 +15,15 @@
   <h3>Key Features:-</h3>
   <hr>
   
-<ol><li><p><strong>User Registration and Authentication:</strong> Users can create accounts, log in, and manage their profiles securely.</p></li><li><p><strong>Job Listings:</strong> Employers can post detailed job listings, including job descriptions, requirements, location, and more.</p></li><li><p><strong>Advanced Search:</strong> Job seekers can filter job listings based on various criteria such as location, industry, experience level, and more.</p></li><li><p><strong>Application Management:</strong> Job seekers can submit applications for job listings and track their application status.</p></li><li><p><strong>Messaging System:</strong> A built-in messaging system facilitates communication between job seekers and employers.</p></li><li><p><strong>Resume Upload:</strong> Job seekers can upload and manage their resumes, making it easy for employers to review qualifications.</p></li><li><p><strong>Admin Panel:</strong> An admin panel provides administrators with the ability to manage users, job listings, and oversee the platform's operations.</p></li><li><p><strong>Responsive Design:</strong> The application is designed to be responsive, ensuring a seamless experience on both desktop and mobile devices.</p></li><li><p><strong>Notifications:</strong> Users receive email notifications for job application updates, messages, and more.</p></li></ol>
+<ol><li><p><strong>User Registration and Authentication:</strong> Users can create accounts, log in, and manage their profiles securely.</p></li><li><p><strong>Job Listings:</strong> Employers can post detailed job listings, including job descriptions, requirements, location, and more.</p></li><li><p><strong>Advanced Search:</strong> Job seekers can filter job listings based on various criteria such as location, industry, experience level, and more.</p></li><li><p><strong>Application Management:</strong> Job seekers can submit applications for job listings and track their application status.</p></li>
+<li><p><strong>Messaging System:</strong> A built-in messaging system facilitates communication between job seekers and employers.</p></li>
+
+<li><p><strong>Resume Upload:</strong> Job seekers can upload and manage their resumes, making it easy for employers to review qualifications.</p></li>
+
+<li><p><strong>Ai Applying:</strong> the candidate can record a video for himself talking about his experience, then make it his evidence for recruiters to show his soft skills && hard skills.</p></li>
+<li><p><strong>Summaries Services:</strong> after sending the application , the open-ai services transform the video to a text,then it makes the summary for that video , so that the recruiter can visit only the AI results to figure the succeeded candiate out.</p></li>
+
+<li><p><strong>Admin Panel:</strong> An admin panel provides administrators with the ability to manage users, job listings, and oversee the platform's operations.</p></li><li><p><strong>Responsive Design:</strong> The application is designed to be responsive, ensuring a seamless experience on both desktop and mobile devices.</p></li><li><p><strong>Notifications:</strong> Users receive email notifications for job application updates, messages, and more.</p></li></ol>
 <p><strong>Technologies Used:</strong></p>
 <ul><li><strong>Backend:</strong> Laravel PHP framework</li><li><strong>Frontend:</strong> Vue.js JavaScript framework</li><li><strong>Database:</strong> MySQL or any supported database system</li><li><strong>Other Technologies:</strong> HTML, CSS, JavaScript, AJAX, REST API</li></ul>
 
@@ -183,21 +191,21 @@ DB_PASSWORD=
 
 
 <h3>Author</h3>
-<span>Nababur Rahaman</span>
+<span>Hariti asmaa</span>
 <ul>
   <li><a href='https://github.com/nababur'>Author profile</a></li>
-   <li><a href='https://nababur.info/'>Website:https://nababur.info/</a></li>
+   <li><a href='https://nababur.info/'>/</a></li>
 </ul>
 
-<h3>Live video: https://youtu.be/HLaublhJ7Zc</h3>
-<a href="mailto:nababurdev@gmail.com">For any support: nababurdev@gmail.com</a>
+<h3>Live video: </h3>
+<a href="mailto:haritiasmae@gmail.com">For any support: haritiasmae@gmail.com</a>
 
 <h4>Happy Open Source....</h4>
 
 <h4>Buy me a coffee :) </h4>
 <p dir="auto">
-  <a href="https://www.buymeacoffee.com/nababur" rel="nofollow">
-    <img src="https://camo.githubusercontent.com/28aae05a0fba45679e8e27d90609601e249b64a5fe30dfef05495de4f4e318d4/68747470733a2f2f63646e2e6275796d6561636f666665652e636f6d2f627574746f6e732f76322f64656661756c742d79656c6c6f772e706e67" alt="Buy Me A Coffee" width="195" height="55" data-canonical-src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" style="max-width: 100%;">
+  <a href="" rel="nofollow">
+   
   </a>
 </p>
 
