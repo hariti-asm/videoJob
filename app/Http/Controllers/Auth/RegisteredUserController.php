@@ -15,7 +15,8 @@ use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Validation\Rule;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegisterMail;
 class RegisteredUserController extends Controller
 {
     /**
@@ -83,8 +84,8 @@ class RegisteredUserController extends Controller
          ]);
      
          event(new Registered($user));
-     
          Auth::login($user);
+         Mail::to(Auth::user()->email)->send(new RegisterMail($user));
      
          return redirect()->route('alljobs');
      }

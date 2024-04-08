@@ -9,18 +9,17 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class SendJob extends Mailable
+class RegisterMail extends Mailable
 {
     use Queueable, SerializesModels;
-
-    public $data;
+    public $mail;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($data)
+    public function __construct($mail)
     {
-        $this->data = $data;
+        $this->mail=$mail;
     }
 
     /**
@@ -28,9 +27,8 @@ class SendJob extends Mailable
      */
     public function envelope(): Envelope
     {
-        
         return new Envelope(
-            subject: 'Strong Job Recommendation.',
+            subject: 'Register Mail',
         );
     }
 
@@ -40,7 +38,7 @@ class SendJob extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mail.jobEmail',
+            view: 'mail.register',
         );
     }
 

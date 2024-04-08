@@ -1,0 +1,2 @@
+hello mr 
+{{$mail['name']}}

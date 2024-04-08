@@ -70,7 +70,8 @@
              <h2 class="mr-3 text-black h4">{{$job->position}}</h2>
              <div class="badge-wrap">
               <span class="border border-warning text-warning py-2 px-4 rounded">{{Str::ucfirst($job->type)}}</span>
-              <span class="border ml-3 bg-primary border-primary text-white py-2 px-4 rounded"><a href="#"data-toggle="modal" data-target="#recomend-job-modal"><i class="icon-envelope-o" style="font-size: 20px;color:#fff"></i></a></span>
+              <span class="border ml-3 bg-primary border-primary text-white py-2 px-4 rounded"><a href="#"data-toggle="modal" data-target="#recomend-job-modal">
+                <i class="icon-envelope-o" style="font-size: 20px;color:#fff"></i></a></span>
              </div>
            </div>
            <div class="job-post-item-body d-block d-md-flex">
