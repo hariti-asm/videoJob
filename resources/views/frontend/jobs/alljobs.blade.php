@@ -45,7 +45,7 @@
               ">
               @if ($job->company->logo)
               <div class="company-logo blank-logo text-center text-md-left pl-3">
-                <img src="{{ asset('/uploads/logo/' . $job->company->logo) }}" alt="Image" class="img-fluid mx-auto">
+                <img src="{{ asset('/' . $job->company->logo) }}" alt="Image" class="img-fluid mx-auto">
               </div>
               @endif
               <div class="job-details h-100">

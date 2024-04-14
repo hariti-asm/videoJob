@@ -10,7 +10,7 @@
     <title>{{ config('app.adminName', 'Dashboard | JobBoard') }}</title>
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" type="image/png">
+    {{-- <link rel="shortcut icon" href="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" type="image/png"> --}}
     <!--====== Google Fonts ======-->
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
@@ -48,9 +48,7 @@
 <body>
 
 
-<!-- Prealoder -->
 <div class="spinner_body">
     <div class="spinner"></div>  
  </div>
  
- <!-- Prealoder -->

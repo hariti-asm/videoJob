@@ -7,8 +7,10 @@ use App\Models\Company;
 use App\Models\Profile;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Events\SummaryProcessed;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Events\SuccessCriteriaProcessed;
 use App\Http\Requests\RegisterCompanyRequest;
 
 
@@ -18,7 +20,15 @@ class EmployerRegisterController extends Controller
      * Display a listing of the resource.
      */
     // use Illuminate\Support\Facades\Route;
+public function pdf(){
+ 
+$parser = new \Smalot\PdfParser\Parser();
+$pdf = $parser->parseFile(public_path('resumes/hariti.pdf'));
 
+$text = $pdf->getText();
+echo $text;
+
+}
 
 public function employerRegister(RegisterCompanyRequest $request)
 {

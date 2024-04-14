@@ -34,7 +34,7 @@
                           <div class="set_thumb">
 
                             <div id='settings-favicon'>
-                              <img id="preview-favicon" align='middle'src="{{ asset('backend/assets/images/icons/favicon.png') }}" alt="your image" title=''/>
+                              {{-- <img id="preview-favicon" align='middle'src="{{ asset('backend/assets/images/icons/favicon.png') }}" alt="your image" title=''/> --}}
                             </div>
                                 <div class="fileUploadInput">
                                     <input type="file" id="file-input-favicon"/>
@@ -50,7 +50,7 @@
                           <div class="set_thumb">
 
                             <div id='settings-logo'>
-                              <img id="preview-thumb" align='middle'src="{{ asset('backend/assets/images/icons/favicon.png') }}" alt="your image" title=''/>
+                              {{-- <img id="preview-thumb" align='middle'src="{{ asset('backend/assets/images/icons/favicon.png') }}" alt="your image" title=''/> --}}
                             </div>
                                 <div class="fileUploadInput">
                                     <input type="file" id="file-input-logo"/>

@@ -8,10 +8,9 @@
           
           <div class="brand-logo">
             <a class="navbar-brand" href="{{ url('/') }}" id="menu-action">
-              {{-- <div class="user-photo d-desktop">
-                <img src="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" alt="">
-              </div> --}}
-              <span>{{ config('app.adminName', 'JobBoard Admin Pannel') }}</span>
+              <div class="user-photo d-desktop">
+                <img src="../images/hariti.jpeg" alt="">
+              </div>
             </a>    
 
            
@@ -39,7 +38,7 @@
               <li class="nav-item dropdown show">
                 <a href="#" class="navbar-nav-link dropdown-toggle text-light" data-toggle="dropdown" aria-expanded="true">
                   <div class="user-photo">
-                    <img src="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" alt="">
+                    <img src="../images/hariti.jpeg" alt="">
                   </div>
 
                   
@@ -76,7 +75,7 @@
     <!--   For Toggle Mobile Nav -->
      <div class="toggle-user-menu" id = "toggle-user-menu">
         <ul>
-          <li><a href="#"><div class="user-photo"><img src="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" alt=""></div>admin@admin.com</a></li>
+          {{-- <li><a href="#"><div class="user-photo"><img src="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" alt=""></div>admin@admin.com</a></li> --}}
           <li><a href="">
             <i class="material-icons mr-2">
                     supervisor_account

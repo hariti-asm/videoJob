@@ -78,7 +78,7 @@
                     <div class="set_thumb">
 
                         <div id='settings-logo'>
-                          <img id="preview-thumb" align='middle'src="{{ asset('backend/assets/images/icons/favicon.png') }}" alt="your image" title=''/>
+                          {{-- <img id="preview-thumb" align='middle'src="{{ asset('backend/assets/images/icons/favicon.png') }}" alt="your image" title=''/> --}}
                         </div>
                             <div class="fileUploadInput">
                                 <input type="file" name="post_thumbnail" id="file-input-logo"/>

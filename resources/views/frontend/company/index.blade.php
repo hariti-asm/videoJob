@@ -28,7 +28,7 @@
                 <div class="d-flex align-items-center">
                     @if ($company->logo)
                     
-                    <img src="{{ asset($company->logo) }}" style="width:100px; height:100px; border-radius:100px; object-fit:cover;" class="border mb-3" alt="">
+                    <img src="{{ asset('/uploads/' . $company->logo) }}" style="width:100px; height:100px; border-radius:100px; object-fit:cover;" class="border mb-3" alt="">
                     @endif
         
                     <h3 class="mx-4 mb-0">Company name:<strong>&nbsp;{{ $company->cname }}</strong> </h3>

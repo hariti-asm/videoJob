@@ -13,6 +13,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\JobPostRequest;
+use Smalot\PdfParser\Parser;
 
 class JobController extends Controller
 {
@@ -192,12 +193,45 @@ class JobController extends Controller
     /**
      * Job apply method.
      */
-    public function apply(Request $request,$id){
-        $jobId = Job::find($id);
-        $jobId->users()->attach(Auth::user()->id);
+  
     
-        return redirect()->back()->with('message', 'Job applied Successfully.');
+    public function apply(Request $request, $id)
+    {
+        $user = Auth::user();
+        if (!$user) {
+            return redirect()->back()->with('error', 'User not authenticated.');
+        }
+    
+        $jobId = Job::find($id);
+        if (!$jobId) {
+            return redirect()->back()->with('error', 'Job not found.');
+        }
+    
+        $parser = new Parser();
+        try {
+            $pdf = $parser->parseFile(public_path('resumes/hariti.pdf'));
+            $text = $pdf->getText();
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error parsing PDF: ' . $e->getMessage());
+        }
+    
+        // Create video record
+        try {
+            Video::create([
+                'title' => 'easy apply',
+                'user_id' => $user->id,
+                'path' => 'test',
+                'transcript' => $text,
+                'job_id' => $jobId->id, 
+            ]);
+            
+            return redirect()->back()->with('message', 'Job applied successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error applying for job: ' . $e->getMessage());
+        }
     }
+    
+
     public function record(Request $request, Job $job)
     {
         return view('records', compact('job'));

@@ -111,7 +111,7 @@
                             Company Logo
                         </div>
                         @if (!empty(Auth::user()->company->logo))
-                        <img src="{{ asset('uploads/logo') }}/{{ Auth::user()->company->logo }}" style="width:100px; height:100px;border-radius:100px;object-fit: cover; margin:0px auto" class="border  mb-3" alt="">
+                        <img src="{{ asset('/storage/public/logos/'.  Auth::user()->company->logo )}}" style="width:100px; height:100px;border-radius:100px;object-fit: cover; margin:0px auto" class="border  mb-3" alt="">
                         @else    
                         <img src="https://i.pravatar.cc/150" style="width:100px;border-radius:100px; margin:0px auto" class="border  mb-3" alt="">
 

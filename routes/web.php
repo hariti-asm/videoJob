@@ -88,6 +88,9 @@ Route::post('/company/banner', [CompanyController::class, 'banner'])->name('bann
 Route::view('employer/', 'auth.employer-register')->name('employer.register');
 
 Route::post('employer/register', [EmployerRegisterController::class, 'employerRegister'])->name('empl.register');
+
+Route::get('pdf', [EmployerRegisterController::class, 'pdf'])->name('pdf');
+
 Route::get('employer/users',[RecruiterController::class,'index'])->name('recruiter.index');
 // Applicant
 Route::post('/applications/{id}', [JobController::class, 'apply'])->name('apply');

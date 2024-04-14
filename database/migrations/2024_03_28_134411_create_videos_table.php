@@ -19,7 +19,7 @@ return new class extends Migration
            $table->text('transcript')->nullable();
            $table->text('summary')->nullable();
            $table->integer(('score'))->nullable();
-           $table->integer('job_id')->unsigned();
+           $table->integer('job_id')->unsigned()->nullable();
            $table->string('status')->nullable();
             $table->timestamps();
         });
