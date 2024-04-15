@@ -29,21 +29,30 @@
 <h2 tabindex="-1" dir="auto"><a id="user-content-adminpanel-screenshot" class="anchor" aria-hidden="true" tabindex="-1" href="#adminpanel-screenshot"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>Job Board pages </h2>
 
 ![screencapture-127-0-0-1-8000-2023-09-01-20_31_16](public/assets/1.png)
+
 ![screencapture-127-0-0-1-8000-dashboard-2023-09-01-20_35_41](public/assets/testimonials.png)
 
 ![screencapture-127-0-0-1-8000-jobs-alljobs-2023-09-01-20_34_45](public/assets/all.png)
+
 ![screencapture-127-0-0-1-8000-jobs-alljobs-2023-09-01-20_34_45](public/assets/category.png)
 ![screencapture-127-0-0-1-8000-jobs-share job-2023-09-01-20_33_11](public/assets/share.png)
+
 ![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/apply.png)
+
 ![screencapture-127-0-0-1-8000-job-apply-using a video](public/assets/video.png)
 
 ![screencapture-127-0-0-1-80custom-blog-from-psd-2023-09-01-20_33_32](public/assets/already.png)
 
 ![screencapture-127-0-0-1-8000-home-2023-09-01-20_32_30](public/assets/applied.png)
+
 ![screencapture-127-0-0-1-8000-jobs-create-2023-09-01-20_34_35](public/assets/add.png)
+
 ![screencapture-127-0-0-1-8000-jobs-applications-2023-09-01-20_34_56](public/assets/myjobs.png)
+
 ![screencapture-127-0-0-1-8000-dashboard-settings-2023-09-01-20_36_43](public/assets/applicants.png)
+
 ![screencapture-127-0-0-1-8000-dashboard-settings-2023-09-01-20_36_43](public/assets/transcript.png)
+
 ![screencapture-127-0-0-1-8000-dashboard-posts-2023-09-01-20_36_27](public/assets/posts.png)
 
 ![screencapture-127-0-0-1-8000-dashboard-jobs-2023-09-01-20_35_55](public/assets//adminj.png)
