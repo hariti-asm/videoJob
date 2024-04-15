@@ -179,7 +179,7 @@ DB_PASSWORD=
 <h3>Live video: </h3>
 <a href="mailto:haritiasmae@gmail.com">For any support: haritiasmae@gmail.com</a>
 
-<h4>Happy Open Source....</h4>
+<h4>Happy Open Source.... 😍😍</h4>
 
 
 </p>
