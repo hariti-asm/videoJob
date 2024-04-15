@@ -37,19 +37,17 @@
 
 ![screencapture-127-0-0-1-8000-2023-09-01-20_31_16](public/assets/1.png)
 ![screencapture-127-0-0-1-8000-dashboard-2023-09-01-20_35_41](public/assets/testimonials.png)
-![screencapture-127-0-0-1-8000-user-profile-2023-09-01-20_32_19](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/056caee2-d903-4b2c-a5bf-60a3d2db8eb6)
 
-![screencapture-127-0-0-1-8000-post-2-earum-qui-ab-corrupti-cupiditate-et-2023-09-01-20_35_14](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/3fe74603-c262-4fd1-916f-e264308a512b)
+![screencapture-127-0-0-1-8000-jobs-alljobs-2023-09-01-20_34_45](public/assets/all.png)
 
-![screencapture-127-0-0-1-8000-jobs-myjobs-2023-09-01-20_34_45](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/75324721-787c-4154-953d-f5b34e6c6d0a)
+<!-- ![screencapture-127-0-0-1-8000-jobs-create-2023-09-01-20_34_35](public/assets/add.png) -->
 
-![screencapture-127-0-0-1-8000-jobs-create-2023-09-01-20_34_35](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/31a42ab3-0977-4941-84e2-c2abbe6e8765)
+<!-- ![screencapture-127-0-0-1-8000-jobs-applications-2023-09-01-20_34_56](public/assets/myjobs.png) -->
 
-![screencapture-127-0-0-1-8000-jobs-applications-2023-09-01-20_34_56](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/228a6976-ccd9-47b7-9282-1b6b3f65131a)
+![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/apply.png)
+![screencapture-127-0-0-1-8000-jobs-share job-2023-09-01-20_33_11](public/assets/share.png)
 
-![screencapture-127-0-0-1-8000-jobs-alljobs-2023-09-01-20_33_11](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/41dd0b97-8cc2-4f84-ae62-ac783be716bb)
-
-![screencapture-127-0-0-1-8000-job-201-need-wordpress-developer-to-create-new-custom-blog-from-psd-2023-09-01-20_33_46](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/cb24db37-c77b-4ae0-9d29-c719dbeee053)
+[screencapture-127-0-0-1-8000-job-201-need-wordpress-developer-to-create-new-custom-blog-from-psd-2023-09-01-20_33_46](public/assets/video_apply.png)
 
 ![screencapture-127-0-0-1-8000-job-201-need-wordpress-developer-to-create-new-custom-blog-from-psd-2023-09-01-20_33_32](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/a0e89709-7dcf-4d87-9dab-fd14162795e5)
 

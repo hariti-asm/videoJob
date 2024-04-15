@@ -132,7 +132,7 @@
             <p>Posted: {{$job->created_at->diffForHumans()}}</p>
             <p>Last date to apply: {{ date('F d, Y', strtotime($job->last_date)) }}</p>
 
-            <p class="mt-2"><a href="{{route('company.index',[$job->company->id,$job->company->slug])}}" class="btn btn-warning" style="width: 100%;">Visit Company Page</a></p>
+            <p class="mt-2 mb-1"><a href="{{route('company.index',[$job->company->id,$job->company->slug])}}" class="btn  btn-warning" style="width: 100%;">Visit Company Page</a></p>
 
             @if (Auth::check() && Auth::user()->user_type=='seeker')
                   @if (!$job->checkApplication())
@@ -141,7 +141,7 @@
 
                   </p>
                   <p>
-                    <a href="{{ route('apply.automatic', [$job]) }}">Automatic</a>
+                    <a class="mt-1 btn btn-primary" style="width: 100%;" href="{{ route('apply.automatic', [$job]) }}">Automatic</a>
                   </p>
                       
                   @else
