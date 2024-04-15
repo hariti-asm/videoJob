@@ -46,10 +46,9 @@
 
 ![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/apply.png)
 ![screencapture-127-0-0-1-8000-jobs-share job-2023-09-01-20_33_11](public/assets/share.png)
+![screencapture-127-0-0-1-8000-job-apply-using a video](public/assets/video_apply.png)
 
-[screencapture-127-0-0-1-8000-job-201-need-wordpress-developer-to-create-new-custom-blog-from-psd-2023-09-01-20_33_46](public/assets/video_apply.png)
-
-![screencapture-127-0-0-1-8000-job-201-need-wordpress-developer-to-create-new-custom-blog-from-psd-2023-09-01-20_33_32](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/a0e89709-7dcf-4d87-9dab-fd14162795e5)
+![screencapture-127-0-0-1-80custom-blog-from-psd-2023-09-01-20_33_32](public/assets/already.png)
 
 ![screencapture-127-0-0-1-8000-home-2023-09-01-20_32_30](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/e59c3c0b-25a6-4741-b625-e33363e4a9d2)
 
