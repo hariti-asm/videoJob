@@ -28,7 +28,7 @@ class CompanyFactory extends Factory
             'logo' => 'gridtemplate.png',
             'banner'=> 'banner.png',
             'slogan'=> 'Learn-earn-grow',
-            'website' => 'https://nababur.info',
+            'website' => 'https://github.com/hariti-asm/',
             'description' => $this->faker->paragraph(rand(2, 10))
             
         ];
