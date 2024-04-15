@@ -21,6 +21,7 @@
 <li><p><strong>Resume Upload:</strong> Job seekers can upload and manage their resumes, making it easy for employers to review qualifications.</p></li>
 
 <li><p><strong>Ai Applying:</strong> the candidate can record a video for himself talking about his experience, then make it his evidence for recruiters to show his soft skills && hard skills.</p></li>
+<li><p><strong>Automatic Accepting/refusing condidates:</strong> the recruiter can validate the condidate application automaticcly after reviewing his application details that the AI facilitate.</p></li>
 <li><p><strong>Summaries Services:</strong> after sending the application , the open-ai services transform the video to a text,then it makes the summary for that video , so that the recruiter can visit only the AI results to figure the succeeded candiate out.</p></li>
 
 <li><p><strong>Admin Panel:</strong> An admin panel provides administrators with the ability to manage users, job listings, and oversee the platform's operations.</p></li><li><p><strong>Responsive Design:</strong> The application is designed to be responsive, ensuring a seamless experience on both desktop and mobile devices.</p></li><li><p><strong>Notifications:</strong> Users receive email notifications for job application updates, messages, and more.</p></li></ol>
