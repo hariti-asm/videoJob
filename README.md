@@ -46,7 +46,7 @@
 
 ![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/apply.png)
 ![screencapture-127-0-0-1-8000-jobs-share job-2023-09-01-20_33_11](public/assets/share.png)
-![screencapture-127-0-0-1-8000-job-apply-using a video](public/assets/video_apply.png)
+![screencapture-127-0-0-1-8000-job-apply-using a video](public/assets/video.png)
 
 ![screencapture-127-0-0-1-80custom-blog-from-psd-2023-09-01-20_33_32](public/assets/already.png)
 
