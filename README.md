@@ -30,6 +30,10 @@
 
 ![screencapture-127-0-0-1-8000-2023-09-01-20_31_16](public/assets/1.png)
 
+
+<p>testimonials</p>
+
+
 ![screencapture-127-0-0-1-8000-dashboard-2023-09-01-20_35_41](public/assets/testimonials.png)
 
 ![screencapture-127-0-0-1-8000-jobs-alljobs-2023-09-01-20_34_45](public/assets/all.png)
