@@ -27,9 +27,10 @@ export default {
 
     methods: {
         formSubmit(e) {
+            console.log("here ");
             e.preventDefault();
             axios
-                .post("/applications/" + this.jobid, {})
+                .post("/Jobfinder/applications/" + this.jobid, {})
                 .then((response) => {
                     this.show = false;
                 });

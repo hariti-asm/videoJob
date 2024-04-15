@@ -93,7 +93,7 @@ Route::get('pdf', [EmployerRegisterController::class, 'pdf'])->name('pdf');
 
 Route::get('employer/users',[RecruiterController::class,'index'])->name('recruiter.index');
 // Applicant
-Route::post('/applications/{id}', [JobController::class, 'apply'])->name('apply');
+Route::post('/jobfinder/applications/{id}', [JobController::class, 'apply'])->name('apply');
 
 // Save job or unsave job
 Route::post('/save/{id}', [FavoriteController::class, 'saveJob']);

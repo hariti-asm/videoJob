@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\JobPostRequest;
 use Smalot\PdfParser\Parser;
-
+use App\Events\SummaryProcessed;
+use App\Events\SuccessCriteriaProcessed;
 class JobController extends Controller
 {
 
@@ -204,27 +205,30 @@ class JobController extends Controller
     
         $jobId = Job::find($id);
         if (!$jobId) {
+
             return redirect()->back()->with('error', 'Job not found.');
         }
-    
+        $jobId->users()->attach(Auth::user()->id);
+
         $parser = new Parser();
+        // dd($user->resume);
         try {
-            $pdf = $parser->parseFile(public_path('resumes/hariti.pdf'));
+            $pdf = $parser->parseFile((storage_path('resumes/'. $user->resume)));
             $text = $pdf->getText();
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error parsing PDF: ' . $e->getMessage());
         }
     
-        // Create video record
         try {
-            Video::create([
+          $video=Video::create([
                 'title' => 'easy apply',
                 'user_id' => $user->id,
                 'path' => 'test',
                 'transcript' => $text,
                 'job_id' => $jobId->id, 
             ]);
-            
+            SummaryProcessed::dispatch($video);
+            SuccessCriteriaProcessed::dispatch($video);
             return redirect()->back()->with('message', 'Job applied successfully.');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error applying for job: ' . $e->getMessage());

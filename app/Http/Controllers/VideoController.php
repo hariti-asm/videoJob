@@ -11,12 +11,12 @@ use Illuminate\Http\Request;
 use App\Events\ApplyProcessed;
 use App\Events\UploadProcessed;
 use App\Events\SummaryProcessed;
+use App\Events\SuccessCriteriaProcessed;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
-use App\Events\SuccessCriteriaProcessed;
 
 class VideoController extends Controller
 {

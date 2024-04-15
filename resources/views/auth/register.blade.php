@@ -13,7 +13,7 @@
                 <div class="card-header text-center"><h3 class="mt-1">{{ __('Job Seeker Register') }}</h3></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <input type="hidden" id="user_type" name="user_type" value="seeker">
