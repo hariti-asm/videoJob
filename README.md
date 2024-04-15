@@ -39,38 +39,27 @@
 ![screencapture-127-0-0-1-8000-dashboard-2023-09-01-20_35_41](public/assets/testimonials.png)
 
 ![screencapture-127-0-0-1-8000-jobs-alljobs-2023-09-01-20_34_45](public/assets/all.png)
-
-<!-- ![screencapture-127-0-0-1-8000-jobs-create-2023-09-01-20_34_35](public/assets/add.png) -->
-
-<!-- ![screencapture-127-0-0-1-8000-jobs-applications-2023-09-01-20_34_56](public/assets/myjobs.png) -->
-
+![screencapture-127-0-0-1-8000-jobs-alljobs-2023-09-01-20_34_45](public/assets/category.png)
 ![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/apply.png)
 ![screencapture-127-0-0-1-8000-jobs-share job-2023-09-01-20_33_11](public/assets/share.png)
 ![screencapture-127-0-0-1-8000-job-apply-using a video](public/assets/video.png)
 
 ![screencapture-127-0-0-1-80custom-blog-from-psd-2023-09-01-20_33_32](public/assets/already.png)
 
-![screencapture-127-0-0-1-8000-home-2023-09-01-20_32_30](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/e59c3c0b-25a6-4741-b625-e33363e4a9d2)
+![screencapture-127-0-0-1-8000-home-2023-09-01-20_32_30](public/assets/applied.png)
+![screencapture-127-0-0-1-8000-jobs-create-2023-09-01-20_34_35](public/assets/add.png)
+![screencapture-127-0-0-1-8000-jobs-applications-2023-09-01-20_34_56](public/assets/myjobs.png)
+![screencapture-127-0-0-1-8000-dashboard-settings-2023-09-01-20_36_43](public/assets/applicants.png)
+![screencapture-127-0-0-1-8000-dashboard-settings-2023-09-01-20_36_43](public/assets/transcript.png)
+![screencapture-127-0-0-1-8000-dashboard-posts-2023-09-01-20_36_27](public/assets/posts.png)
 
-![screencapture-127-0-0-1-8000-dashboard-settings-2023-09-01-20_36_43](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/663b1710-1f9a-49e7-bcb5-c5b4d9054f44)
+![screencapture-127-0-0-1-8000-dashboard-jobs-2023-09-01-20_35_55](public/assets//adminj.png)
 
-![screencapture-127-0-0-1-8000-dashboard-posts-2023-09-01-20_36_27](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/830785e0-63fd-4b03-acc7-e6ac36643123)
+![screencapture-127-0-0-1-8000-dashboard-employers-2023-09-01-20_36_17](public/assets/candidates.png)
 
-![screencapture-127-0-0-1-8000-dashboard-jobs-2023-09-01-20_35_55](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/845570a6-beac-4ff8-bda6-57f0840efb04)
+![screencapture-127-0-0-1-8000-dashboard-category-2023-09-01-20_36_35](public/assets/adminc.png)
 
-![screencapture-127-0-0-1-8000-dashboard-employers-2023-09-01-20_36_17](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/00e94d87-f319-431f-9212-c7beaf26474b)
 
-![screencapture-127-0-0-1-8000-dashboard-category-2023-09-01-20_36_35](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/58b17718-212d-465b-af64-f1c31275291d)
-
-![screencapture-127-0-0-1-8000-dashboard-category-2023-09-01-17_38_59](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/8ffa915d-bc16-4667-ac66-0097f7184485)
-
-![screencapture-127-0-0-1-8000-dashboard-candidates-2023-09-01-20_36_08](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/fe0aed72-058c-4877-9f57-cf23cd3e1eb8)
-
-![screencapture-127-0-0-1-8000-company-create-2023-09-01-20_34_26](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/1d1e38fb-7d4d-492e-9593-834383781168)
-
-![screencapture-127-0-0-1-8000-company-create-2023-09-01-20_34_26](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/334b0d55-3a8d-48f4-aa6b-b4674e76c4d4)
-
-![screencapture-127-0-0-1-8000-category-1-healthcare-2023-09-01-20_32_53](https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script/assets/8381528/2231688a-89b7-41a4-9c1d-5900526a582a)
 
 
 
@@ -101,7 +90,7 @@
   </h2>
   <blockquote>
     <p dir="auto">
-      <a href="https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script.git">https://github.com/nababur/JobFinder-Job-Portal-Laravel-Vue-Script.git</a>
+      <a href="https://github.com/hariti-asm/videoJob/">https://github.com/hariti-asm/videoJob</a>
     </p>
   </blockquote>
   <br>
@@ -190,8 +179,8 @@ DB_PASSWORD=
 <h3>Author</h3>
 <span>Hariti asmaa</span>
 <ul>
-  <li><a href='https://github.com/nababur'>Author profile</a></li>
-   <li><a href='https://nababur.info/'>/</a></li>
+  <li><a href='https://github.com/hariti-asm/'>Author profile</a></li>
+   <li><a href='https://github.com/hariti-asm/'>/</a></li>
 </ul>
 
 <h3>Live video: </h3>
@@ -199,14 +188,8 @@ DB_PASSWORD=
 
 <h4>Happy Open Source....</h4>
 
-<h4>Buy me a coffee :) </h4>
-<p dir="auto">
-  <a href="" rel="nofollow">
-   
-  </a>
+
 </p>
 
 </div>
 
-
-Thanks, Colorlib for the free JobFinder HTML template.

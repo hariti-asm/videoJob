@@ -297,7 +297,7 @@ class DashboardController extends Controller
 
     public function editCandidate($id){
         $candidate = User::findOrFail($id);
-        $profile = Profile::where('user_id', $id)->get();
+        $profile = User::where('id', $id)->get();
 
         //dd($profile);
         return view('admin.candidates.edit', compact('candidate', 'profile'));

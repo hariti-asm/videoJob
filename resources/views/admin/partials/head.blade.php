@@ -10,7 +10,7 @@
     <title>{{ config('app.adminName', 'Dashboard | JobBoard') }}</title>
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="https://ibb.co/k0pNSj7" type="image/png">
+    {{-- <link rel="shortcut icon" href="https://ibb.co/k0pNSj7" type="image/png"> --}}
     <!--====== Google Fonts ======-->
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
