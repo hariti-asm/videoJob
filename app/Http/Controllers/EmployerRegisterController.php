@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Company;
 use App\Models\Profile;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Events\SummaryProcessed;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Events\SuccessCriteriaProcessed;
 use App\Http\Requests\RegisterCompanyRequest;
+use Smalot\PdfParser\Parser;
 
 
 class EmployerRegisterController extends Controller
@@ -22,12 +24,14 @@ class EmployerRegisterController extends Controller
     // use Illuminate\Support\Facades\Route;
 public function pdf(){
  
-$parser = new \Smalot\PdfParser\Parser();
-$pdf = $parser->parseFile(public_path('resumes/hariti.pdf'));
+$filePath = storage_path('app/public/resumes/hariti_resume (1)_1713177454.pdf');
 
+$parser = new Parser();
+
+// Parse the PDF file
+$pdf = $parser->parseFile($filePath);
 $text = $pdf->getText();
-echo $text;
-
+dd($text);
 }
 
 public function employerRegister(RegisterCompanyRequest $request)

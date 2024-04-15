@@ -30,7 +30,7 @@ export default {
             console.log("here ");
             e.preventDefault();
             axios
-                .post("/Jobfinder/applications/" + this.jobid, {})
+                .post("/jobfinder/applications/" + this.jobid, {})
                 .then((response) => {
                     this.show = false;
                 });

@@ -211,9 +211,9 @@ class JobController extends Controller
         $jobId->users()->attach(Auth::user()->id);
 
         $parser = new Parser();
-        // dd($user->resume);
+        // dd((asset('storage/resumes/'. $user->resume)));
         try {
-            $pdf = $parser->parseFile((storage_path('resumes/'. $user->resume)));
+            $pdf = $parser->parseFile( storage_path('app/public/resumes/'. $user->resume));
             $text = $pdf->getText();
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error parsing PDF: ' . $e->getMessage());
