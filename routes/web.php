@@ -113,5 +113,7 @@ Route::get('/companies', [CompanyController::class, 'company'])->name('company')
 
 // Email Route 
 Route::post('/job/mail', [EmailController::class, 'send'])->name('mail');
+Route::post('/job/confirm', [EmailController::class, 'confirm'])->name('sendConfirmation');
+Route::post('/job/reject', [EmailController::class, 'reject'])->name('reject');
 
 Route::get('/post/{id}/{slug}', [DashboardController::class, 'readPost'])->name('adminPostRead');

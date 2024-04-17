@@ -62,9 +62,29 @@
                                         &nbsp;<a href="{{ route('applicant_data',  $user)}}" class="btn btn-secondary btn-sm">see</a>
 
                                     </td>
-                                    <td class="px-4 py-3 text-sm border ">
-                                        <span class="bg-[#28a745] text-white py-1 px-2 rounded-full text-xs mr-2">Accept</span>
-                                        <span class="bg-red-500 text-white py-1 px-2 rounded-full text-xs">Reject</span>
+                                    <td class=" flex  gap-2 px-4 py-3 text-sm ">
+                                        <form action="{{ route('sendConfirmation') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="name" value="{{ $user->name }}">
+                                            <input type="hidden" name="email" value="{{ $user->email }}">
+
+                                            <input type="hidden" name="job" value="{{ $user->job }}">
+
+
+                                            <button class="bg-green-500 text-white py-1 px-2 rounded-full text-xs"  type="submit">Accept</button>
+                                        </form>
+                                        
+                                        <form action="{{ route('reject') }}" method="POST">
+                                            @csrf
+                                            {{-- <input type="hidden" name="status" value="reject"> --}}
+                                            <input type="hidden" name="name" value="{{ $user->name }}">
+                                            <input type="hidden" name="email" value="{{ $user->email }}">
+                                            <input type="hidden" name="job" value="{{ $user->job }}">
+                                            {{-- <input type="hidden" name="cname" value="{{ $user->job->company }}"> --}}
+
+                                            <button class="bg-red-500 text-white py-1 px-2 rounded-full text-xs" type="submit">Reject</button>
+                                        </form>
+                                        
 
                                     </td>
                                 </tr>

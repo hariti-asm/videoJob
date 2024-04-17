@@ -15,6 +15,6 @@ Best,
 Job link
 </x-mail::button>
 
-Thanks,<br>
+Thanks,<br>acc
 {{ config('app.name') }}
 </x-mail::message>

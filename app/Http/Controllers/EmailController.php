@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Mail\SendJob;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use App\Mail\AcceptedCondidate;
+use App\Mail\RejectedCondidate;
 use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Support\Facades\Mail;
 
 class EmailController extends Controller
 {
@@ -48,4 +50,35 @@ class EmailController extends Controller
             return redirect()->back()->with('error_msg', 'Something went wrong. Please try again later.');
         }
     }
+    
+
+
+    public function confirm(Request $request){
+      
+        $data = array(
+            'your_name' => $request->get('name'),
+            'your_email' => $request->get('email'),
+            'job' => $request->get('job'),
+        );
+        
+        $emailTo = $request->get('email');
+        
+           Mail::to($emailTo)->send(new AcceptedCondidate($data));
+            return redirect()->back()->with('jobmsg', 'Job sent Successfully!');
+        } 
+    
+        public function reject(Request $request){
+      
+            $data = array(
+                'your_name' => $request->get('name'),
+                'your_email' => $request->get('email'),
+                'job' => $request->get('job'),
+            );
+            
+            $emailTo = $request->get('email');
+            
+               Mail::to($emailTo)->send(new RejectedCondidate($data));
+                return redirect()->back()->with('jobmsg', 'Job sent Successfully!');
+            } 
+    
 }
