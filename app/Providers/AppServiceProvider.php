@@ -11,9 +11,9 @@ use App\Listeners\CalculateScore;
 use App\Services\CategoryService;
 use App\Listeners\TranscribeAudio;
 use App\Listeners\TranscriptSummary;
-use App\Repository\CategoryInterface;
+use App\Repositories\CategoryInterface;
 use Illuminate\Support\Facades\Event;
-use App\Repository\CategoryRepository;
+use App\Repositories\CategoryRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Events\SuccessCriteriaProcessed;
 

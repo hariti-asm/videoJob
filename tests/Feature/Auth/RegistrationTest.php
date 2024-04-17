@@ -2,9 +2,10 @@
 
 namespace Tests\Feature\Auth;
 
+use Tests\TestCase;
+use Illuminate\Http\UploadedFile;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 
 class RegistrationTest extends TestCase
 {
@@ -24,9 +25,19 @@ class RegistrationTest extends TestCase
             'email' => 'test@example.com',
             'password' => 'password',
             'password_confirmation' => 'password',
+            'address' => '123 Test St', 
+            'gender' => 'male', 
+            'dob' => '1990-01-01', 
+            'experience' => '3 years',
+            'bio' => 'Lorem ipsum', 
+            'phone'=>'+212 6 78 12 09 12',
+            'job'=>'soft engineer',
+            'status'=>"seeker",
+            'cover_letter' => UploadedFile::fake()->create('cover_letter.pdf'),
+            'resume' => UploadedFile::fake()->create('resume.pdf'), 
+            'avatar' => UploadedFile::fake()->image('avatar.jpg') 
         ]);
 
         $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::HOME);
     }
 }

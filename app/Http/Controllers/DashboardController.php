@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Video;
 use App\Models\Company;
 use App\Models\Profile;
 use App\Models\Category;
@@ -457,7 +458,10 @@ class DashboardController extends Controller
     }
 
 
-
+public function videos(){
+    $videos = Video::where('path', '!=', 'test')->get();
+    return view('admin.videos.index',compact('videos')); 
+}
 
 
 

@@ -71,6 +71,9 @@
                             <li><a  href="{{ route('appliedJobs') }}">
                               {{ __('Applied Jobs') }}
                           </a></li>
+                          <li><a  href="{{ route('profile.edit') }}">
+                            {{ __('Profile') }}
+                        </a></li>
                             @endif
 
 

@@ -51,14 +51,6 @@ Route::prefix('dashboard')->group(function () {
     Route::post('/category/edit/{id}', [DashboardController::class, 'updateCategory'])->name('adminCatUpdate');
     Route::post('/category/delete/{id}', [DashboardController::class, 'destroyCategory'])->name('adminCatDelete');
 
-    // All Categroy
-    Route::get('/category', [DashboardController::class, 'getAllCategory'])->name('adminCategory');
-    Route::get('/category/create', [DashboardController::class, 'categoryCreate'])->name('adminCatCreate');
-    Route::post('/category/create', [DashboardController::class, 'categoryStore'])->name('adminCatStore');
-    Route::get('/category/toggle/{id}', [DashboardController::class, 'categoryToggle'])->name('adminCatToggle');
-    Route::get('/category/edit/{id}', [DashboardController::class, 'editCategory'])->name('adminEditCat');
-    Route::post('/category/edit/{id}', [DashboardController::class, 'updateCategory'])->name('adminCatUpdate');
-    Route::post('/category/delete/{id}', [DashboardController::class, 'destroyCategory'])->name('adminCatDelete');
     // Posts Route 
     Route::get('/posts', [DashboardController::class, 'getAllPosts'])->name('adminPosts');
     Route::get('/post/create', [DashboardController::class, 'postCreate'])->name('adminPostCreate');
@@ -74,8 +66,7 @@ Route::prefix('dashboard')->group(function () {
     Route::post('/post/trash/permanant', [DashboardController::class, 'postDeletePermanantly'])->name('adminPostDelPermanent');
     
     Route::get('/post/toggle/{id}', [DashboardController::class, 'postToggle'])->name('adminPostToggle');
-    
-    
+    Route::get('/videos', [DashboardController::class, 'videos'])->name("adminvideos");
     // Testimonial Route 
     Route::get('/testimonials', [DashboardController::class, 'testimonials'])->name('adminTestimonials');
     Route::get('/testimonial/create', [DashboardController::class, 'testimonialCreate'])->name('adminTestimonial');
