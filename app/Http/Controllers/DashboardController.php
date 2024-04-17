@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\JobPostRequest;
-use App\Models\Category;
-use App\Models\Company;
 use App\Models\Job;
 use App\Models\Post;
-use App\Models\Profile;
-use App\Models\Testimonial;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Company;
+use App\Models\Profile;
+use App\Models\Category;
+use App\Models\Testimonial;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Services\CategoryService;
+use App\Http\Requests\JobPostRequest;
 use Illuminate\Support\Facades\Storage;
+
 class DashboardController extends Controller
 {
+    protected $categoryService;
+
+    public function __construct(CategoryService $categoryService)
+    {
+        $this->categoryService = $categoryService;
+    }
     public function index(){
         $jobs = Job::all();
         $companies = Company::all();
@@ -321,8 +329,8 @@ class DashboardController extends Controller
         ]);
 
 
-         Profile::updateOrCreate(
-            ['user_id' => $id],
+         User::updateOrCreate(
+            ['id' => $id],
             [
                 'address'=> request('address'),
                 'phone'=> request('phone'),
@@ -390,81 +398,63 @@ class DashboardController extends Controller
 
 
     // Category create
-    public function categoryCreate(){
-        
+    public function categoryCreate()
+    {
         return view('admin.category.create');
     }
 
-
-
     // Get all Category 
-    public function getAllCategory(){
-        $categories = Category::latest()->get();
+    public function getAllCategory()
+    {
+        $categories = $this->categoryService->all();
         return view('admin.category.index', compact('categories'));
     }
 
-
-    // Edit Category 
-    public function editCategory($id){
-        $category = Category::findOrFail($id);
+    // Show edit form for Category 
+    public function editCategory($id)
+    {
+        $category = $this->categoryService->find($id);
         return view('admin.category.edit', compact('category'));
     }
 
-    public function updateCategory(Request $request, $id){
- 
+    // Update Category 
+    public function updateCategory(Request $request, $id)
+    {
         $this->validate($request, [
-            'name'=> 'required|min:4'
+            'name' => 'required|min:4'
         ]);
 
-        Category::where('id', $id)->update([
-            'name'=> $request->get('name'),
-            'slug' => Str::slug($request->get('name'))
-            
-        ]);
+        $this->categoryService->update($request->all(), $id);
 
         return redirect('/dashboard/category')->with('success', 'Category updated Successfully!');
-
     }
 
-    /**
-     *  Delete the single Category
-     */
-    public function destroyCategory(Request $request, string $id){
-        $Category = Category::find($id);
-        $Category->delete();
+    // Delete Category
+    public function destroyCategory($id)
+    {
+        $this->categoryService->delete($id);
         return redirect('/dashboard/category')->with('success', 'Category Deleted Successfully!');
     }
+
     // Category toggle method 
-    public function categoryToggle($id){
-        $categoryToggle = Category::find($id);
-        $categoryToggle->status = !$categoryToggle->status;
-        $categoryToggle->save();
+    public function categoryToggle($id)
+    {
+        $this->categoryService-> categoryToggle($id);
 
         return redirect('/dashboard/category')->with('success', 'Status Updated Successfully!');
     }
 
-
-    /**
-     * Store a category
-     */
+    // Store a category
     public function categoryStore(Request $request)
     {
         $this->validate($request, [
-            'name'=> 'required|min:4|unique:categories'
-           
+            'name' => 'required|min:4|unique:categories'
         ]);
 
-        Category::create([
-            'name'=> $name = $request->get('name'),
-            'slug' => Str::slug($name),
-            'status' => '1',
-
-        ]);
-
+        $this->categoryService->create($request->all());
 
         return redirect('/dashboard/category')->with('success', 'Category created Successfully!');
     }
-
 
 
 
