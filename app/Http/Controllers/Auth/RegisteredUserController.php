@@ -82,7 +82,7 @@ class RegisteredUserController extends Controller
              'cover_letter' => $fileNameToStoreCoverLetter ?? null,
              'status' => $request->input('status'),
          ]);
-     
+    //  dd($user);
          event(new Registered($user));
          Auth::login($user);
          Mail::to(Auth::user()->email)->send(new RegisterMail($user));

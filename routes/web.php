@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Auth;
@@ -78,6 +79,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get('/user/profile', [UserProfileController::class, 'index'])->name('user.profile')->middleware('seeker');
+Route::post('/user/profile/create', [UserProfileController::class, 'store'])->name('profile.create')->middleware('seeker');
+Route::post('/user/coverletter', [UserProfileController::class, 'coverletter'])->name('cover.letter')->middleware('seeker');
+Route::post('/user/resume', [UserProfileController::class, 'resume'])->name('resume')->middleware('seeker');
+Route::post('/user/avatar', [UserProfileController::class, 'avatar'])->name('avatar')->middleware('seeker');
+
 // Company 
 Route::get('/company/{id}/{company}', [CompanyController::class, 'index'])->name('company.index');
 Route::get('/company/create', [CompanyController::class, 'create'])->name('company.create');
