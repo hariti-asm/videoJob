@@ -141,10 +141,11 @@
                         <p><strong class="badge bg-secondary badge-primary"> Bio: </strong> {{ Auth::user()->bio }} </p>
                         <p>Member On: <strong class="badge bg-secondary badge-primary"> {{ date('F d Y', strtotime(Auth::user()->created_at)) }}</strong> </p>
 
-                        @if (!empty(Auth::user()->profile->cover_letter))
-                            <p>Download cover letter: <strong class="badge bg-info badge-primary"><a class="text-white" target="_blank" href="{{ url('storage/'.Auth::user()->cover_letter) }}"> Cover letter</a></strong></p>
+                        @if (!empty(Auth::user()->cover_letter))
+                            <p>Download cover letter: <strong class="badge bg-info badge-primary"><a class="text-white" target="_blank"href="{{ url('/storage/cover_letters/'.Auth::user()->cover_letter) }}"> Cover letter</a></strong></p>
+
                         @endif
-                        @if (!empty(Auth::user()->profile->resume))
+                        @if (!empty(Auth::user()->resume))
                             <p>Download resume: <strong class="badge bg-info badge-primary"><a  class="text-white"target="_blank" href="{{ url('storage/'.Auth::user()->resume) }}"> Resume</a> </strong></p>
                         @endif
 
