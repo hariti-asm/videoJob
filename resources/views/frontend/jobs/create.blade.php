@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group mt-3">
                                 <label for="experience">Year of experience:</label>
-                                <input type="text" name="experience" class="form-control{{ $errors->has('experience') ? ' is-invalid' : '' }}"  value="{{ old('experience') }}">
+                                <input type="number" name="experience" class="form-control{{ $errors->has('experience') ? ' is-invalid' : '' }}"  value="{{ old('experience') }}">
                                 @if ($errors->has('experience'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('experience') }}</strong>

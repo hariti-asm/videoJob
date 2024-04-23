@@ -1,12 +1,13 @@
 
 
 
-<div class="site-wrap">
+<div class="site-wrap overflow-hidden">
 
   <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
       <div class="site-mobile-menu-close mt-3">
-        <span class="icon-close2 js-menu-toggle"></span>
+        <span class=" js-menu-toggle"> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path d="M5 5L12 5L19 5"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 5L12 5L19 5;M5 5L12 12L19 5"/></path><path d="M5 12H19"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 12H19;M12 12H12"/></path><path d="M5 19L12 19L19 19"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 19L12 19L19 19;M5 19L12 12L19 19"/></path></g></svg>        </span>
       </div>
     </div>
     <div class="site-mobile-menu-body"></div>
@@ -25,7 +26,7 @@
             <div class="col-10">
               <nav class="site-navigation text-right" role="navigation">
                 <div class="container pr-0">
-                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span > <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><path fill="black" d="M4 17.27v-1h16v1zm0-4.77v-1h16v1zm0-4.77v-1h16v1z"/></svg></span></a></div>
 
                   <ul class="site-menu js-clone-nav d-none d-lg-block">
          
@@ -41,6 +42,7 @@
                           <a href="/home">Dashboard</a>
                           
                           <ul class="dropdown arrow-top">
+                            
                             @if (Auth::user()->user_type==='employer')
                             <?php echo Auth::user()->user_type?>
                             <li><a  href="{{ route('job.create') }}">
@@ -86,7 +88,8 @@
                         @else
 
                           <li><a href="/home">Dashboard</a></li>
-
+                         
+                              
                          @endif
 
 
@@ -95,24 +98,40 @@
 
 
                     @if (!Auth::check())
-                      <li>
-                        <a href="#" data-bs-target="#login-modal" data-toggle="modal" data-target="#login-modal" ><span class="bg-primary text-white py-3 px-3 rounded"><span class="icon-sign-in mr-3"></span>Login</span></a>
-                      </li>
-                    @else
-                      <li>
-                        <a class="bg-primary text-white py-3 px-3 rounded" href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                          <span class="icon-sign-out mr-3"></span>{{ __('Logout') }}
+                    <li>
+                      <a href="#" data-bs-target="#login-modal" data-toggle="modal" data-target="#login-modal">
+                          <span class="bg-primary text-white py-3 px-3 rounded">
+                              {{-- <span>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                      <path fill="currentColor" d="m17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4z"/>
+                                  </svg>
+                              </span> --}}
+                              Login
+                          </span>
                       </a>
-                      </li>
+                  </li>
+                  
+                    @else
+                    <li>
+                      <div class="flex flex-row items-center w-full">
+                          <a class="bg-primary text-white py-3 px-3 rounded " href="{{ route('logout') }}"
+                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                              {{-- <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                  <path fill="white" d="M3 21V3h9v2H5v14h7v2zm13-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z"/>
+                              </svg> --}}
+                              {{ __('LOGOUT') }}
+                          </a>
+                      </div>
+                  </li>
+                  {{-- <a href="{{route('profile.edit')}}">Account</a> --}}
+                  
 
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                           @csrf
                       </form>
                       
-                    @endif
-
+                          
+                          @endif
 
                   </ul>
                 </div>

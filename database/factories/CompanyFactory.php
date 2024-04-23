@@ -25,7 +25,7 @@ class CompanyFactory extends Factory
             'address' => $this->faker->address(),
             'phone' => $this->faker->phoneNumber(),
             'website' => $this->faker->domainName(),
-            'logo' => 'gridtemplate.png',
+            'logo' => 'youcode.jpg',
             'banner'=> 'banner.png',
             'slogan'=> 'Learn-earn-grow',
             'website' => 'https://github.com/hariti-asm/',

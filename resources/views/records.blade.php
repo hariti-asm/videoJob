@@ -14,7 +14,7 @@
             </div>
             @endif
             <p class="instruction-text bg-gray-200 text-gray-800 p-4 rounded my-4">
-                Please record a video of yourself talking about your full name, age, gender, education, and professional experience.
+                Please record a video of yourself talking about your full name, age, gender, education, and professional experience <strong>(Please don't exceed 1.5-2mn)</strong>.
             </p>
             
             <div class="card">

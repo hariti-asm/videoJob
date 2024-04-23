@@ -8,7 +8,7 @@
 
 
 
-<div class="site-section bg-light">
+<div class="site-section bg-light overflow-hidden">
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
@@ -34,7 +34,7 @@
             ">
             @if ($job->company->logo ?? '')
             <div class="company-logo blank-logo text-center text-md-left pl-3">
-              <img src="{{ asset('/uploads/logo') }}/{{ $job->company->logo  ?? ''}}" alt="Image" class="img-fluid mx-auto">
+                <img src="{{ asset('/uploads/logo') }}/{{ $job->company->logo  ?? ''}}" alt="Image" class="img-fluid mx-auto">
             </div>
             @endif
             <div class="job-details h-100">

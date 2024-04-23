@@ -31,7 +31,7 @@
                     <div class="card company-card">
                         
                         <div class="card-header bg-transparent border-0">
-                            <img  src="{{ asset('/uploads/logo') }}/{{ $company->logo }}"  style="border-radius: 50px" width="50" height="50" alt="">
+                            <img  src="{{ url('storage/logos') }}/{{ $company->logo }}"  style="border-radius: 50px" width="50" height="50" alt="">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $company->cname }}</h5>

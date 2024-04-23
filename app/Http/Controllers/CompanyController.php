@@ -6,6 +6,7 @@ use App\Models\Job;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\CompanyRequest;
 use Illuminate\Support\Facades\Storage;
 
 class CompanyController extends Controller
@@ -37,17 +38,11 @@ class CompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CompanyRequest $request)
     {
         $user_id = auth()->user()->id;
 
-        $request->validate([
-            'address' => 'required|min:20|max:450',
-            'phone'=> 'required|digits:11',
-            'website'=> 'required',
-            'slogan'=> 'required|min:10|max:100',
-            'description'=> 'required|min:100|max:4000',
-        ]);
+        $request->validated();
 
 
         Company::where('user_id', $user_id)->update([
@@ -73,64 +68,53 @@ class CompanyController extends Controller
     
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
-            $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
+            $fileName = $this->uploadFileAndGetFileName($file, 'public/logos');
     
             // Retrieve the old logo filename
             $oldLogo = Company::where('user_id', $user_id)->value('logo');
-      
-
+    
             // Delete the old logo file
-            if(is_file(public_path('uploads/logo/' . $oldLogo))){
-                unlink(public_path('uploads/logo/' . $oldLogo));
-                
+            if (!is_null($oldLogo)) {
+                Storage::delete('public/logos/' . $oldLogo);
             }
     
-            $file->move('uploads/logo/', $filename);
-    
+            // Update the user's logo
             Company::where('user_id', $user_id)->update([
-                'logo' => $filename
+                'logo' => $fileName
             ]);
     
             return redirect()->back()->with('logo', 'Logo updated...');
         }
     }
-
-
-    public function banner(Request $request){
+    public function banner(Request $request)
+    {
         $user_id = auth()->user()->id;
-        
+    
         $request->validate([
             'banner' => 'required|mimes:jpeg,jpg,png|max:2048',
         ]);
     
         if ($request->hasFile('banner')) {
             $file = $request->file('banner');
-            $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
+            $fileName = $this->uploadFileAndGetFileName($file, 'public/banners');
     
             // Retrieve the old banner filename
             $oldBanner = Company::where('user_id', $user_id)->value('banner');
-      
-
+    
             // Delete the old banner file
-            if(is_file(public_path('uploads/banner/' . $oldBanner))){
-                unlink(public_path('uploads/banner/' . $oldBanner));
-                
+            if (!is_null($oldBanner)) {
+                Storage::delete('public/banners/' . $oldBanner);
             }
     
-            $file->move('uploads/banner/', $filename);
-    
+            // Update the user's banner
             Company::where('user_id', $user_id)->update([
-                'banner' => $filename
+                'banner' => $fileName
             ]);
     
             return redirect()->back()->with('banner', 'Banner updated...');
         }
-
-
-
     }
+        
     /**
      * Compnay metod
      */
@@ -145,4 +129,13 @@ class CompanyController extends Controller
 
                 return view('frontend.company.index', compact('company'));
     }
+    private function uploadFileAndGetFileName($file, $path)
+{
+    $filenameWithExt = $file->getClientOriginalName();
+    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+    $extension = $file->getClientOriginalExtension();
+    $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+    $file->storeAs($path, $fileNameToStore);
+    return $fileNameToStore;
+}
 }

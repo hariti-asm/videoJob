@@ -18,61 +18,58 @@ use Smalot\PdfParser\Parser;
 
 class EmployerRegisterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    // use Illuminate\Support\Facades\Route;
-public function pdf(){
  
-$filePath = storage_path('app/public/resumes/hariti_resume (1)_1713177454.pdf');
 
-$parser = new Parser();
-
-// Parse the PDF file
-$pdf = $parser->parseFile($filePath);
-$text = $pdf->getText();
-dd($text);
-}
-
-public function employerRegister(RegisterCompanyRequest $request)
-{
-    // Create a new user
-    $user = User::create([
-         'name'=> $request->cname,
-        'email' => $request->email,
-        'password' => Hash::make($request->password),
-        'user_type' => $request->user_type,
-    ]);
-
-    // Upload logo if provided
-    $logoPath = null;
-    if ($request->hasFile('logo')) {
-        $logoPath = $request->file('logo')->store('public/logos');
+    public function employerRegister(RegisterCompanyRequest $request)
+    {
+        $user = User::create([
+            'name' => $request->cname,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'user_type' => $request->user_type,
+        ]);
+    
+      
+    
+        $logoPath = null;
+        if ($request->hasFile('logo')) {
+            $logoPath = $this->uploadFileAndGetFileName($request->file('logo'), 'public/logos');
+        }
+    
+        $bannerPath = null;
+        if ($request->hasFile('banner')) {
+            $bannerPath = $this->uploadFileAndGetFileName($request->file('banner'), 'public/banners');
+        }
+    
+        $company = Company::create([
+            'user_id' => $user->id,
+            'cname' => $request->cname,
+            'slug' => Str::slug($request->cname),
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'website' => $request->website,
+            'logo' => $logoPath,
+            'banner' => $bannerPath,
+            'slogan' => $request->slogan,
+            'description' => $request->description,
+        ]);
+    
+        Auth::login($user);
+    
+        return redirect()->route('company.index', ['id' => $company->id, 'company' => $company])
+            ->with('message', 'A verification link is sent to your email. Please follow the link to verify it.');
     }
-
-    // Upload banner if provided
-    $bannerPath = null;
-    if ($request->hasFile('banner')) {
-        $bannerPath = $request->file('banner')->store('public/banners');
+    
+    private function uploadFileAndGetFileName($file, $path)
+    {
+        $filenameWithExt = $file->getClientOriginalName();
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        $extension = $file->getClientOriginalExtension();
+        $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+        $file->storeAs($path, $fileNameToStore);
+        return $fileNameToStore;
     }
-
-    $company = Company::create([
-        'user_id' => $user->id,
-        'cname' => $request->cname,
-        'slug' => Str::slug($request->cname),
-        'address' => $request->address,
-        'phone' => $request->phone,
-        'website' => $request->website,
-        'logo' => $logoPath,
-        'banner' => $bannerPath,
-        'slogan' => $request->slogan,
-        'description' => $request->description,
-    ]);
-    Auth::login($user);
-
-    return redirect()->route('company.index', ['id' => $company->id, 'company' => $company])
-                     ->with('message', 'A verification link is sent to your email. Please follow the link to verify it.');
-}
+    
     
     
 

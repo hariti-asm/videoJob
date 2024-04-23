@@ -119,29 +119,35 @@
                         <div class="row mb-3">
                             <label for="logo" class="col-md-4 col-form-label text-md-end">{{ __('Logo') }}</label>
                             <div class="col-md-6">
-                                <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror" name="logo">
+                                <input id="logo" type="file" class="border border-gray-300 focus:border-green-500 focus:ring-green-500 rounded-md p-2 @error('logo') border-red-500 @enderror" name="logo">
                                 @error('logo')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="text-red-500 text-sm mt-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
                             </div>
+                            
                         </div>
 
                         <div class="row mb-3">
                             <label for="banner" class="col-md-4 col-form-label text-md-end">{{ __('Banner') }}</label>
                             <div class="col-md-6">
-                                <input id="banner" type="file" class="form-control @error('banner') is-invalid @enderror" name="banner">
+                                <input id="banner" type="file" class="border border-gray-300 focus:border-green-500 focus:ring-green-500 rounded-md p-2 @error('banner') border-red-500 @enderror" name="banner">
                                 @error('banner')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="text-red-500 text-sm mt-1" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
                             </div>
                         </div>
+                        
+
+                      
+
+
 
                         <div class="row mb-3">
-                            <label for="slogan" class="col-md -md-4 col-form-label text-md-end">{{ __('Slogan') }}</label>
+                            <label for="slogan" class="col-md-4 col-form-label text-md-end">{{ __('Slogan') }}</label>
                             <div class="col-md-6">
                                 <input id="slogan" type="text" class="form-control @error('slogan') is-invalid @enderror" name="slogan" value="{{ old('slogan') }}" autocomplete="slogan">
                                 @error('slogan')

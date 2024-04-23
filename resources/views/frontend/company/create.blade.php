@@ -111,33 +111,30 @@
                             Company Logo
                         </div>
                         @if (!empty(Auth::user()->company->logo))
-                        <img src="{{ asset('/storage/public/logos/'.  Auth::user()->company->logo )}}" style="width:100px; height:100px;border-radius:100px;object-fit: cover; margin:0px auto" class="border  mb-3" alt="">
+                        <img src="{{ url('/storage/logos/'.  Auth::user()->company->logo )}}" style="width:100px; height:100px;border-radius:100px;object-fit: cover; margin:0px auto" class="border  mb-3" alt="">
+
                         @else    
                         <img src="https://i.pravatar.cc/150" style="width:100px;border-radius:100px; margin:0px auto" class="border  mb-3" alt="">
 
                         @endif
                         <div class="card-body p-0 text-center">
-                
-                            <input type="file" class="form-control{{ $errors->has('logo') ? ' is-invalid' : '' }}" name="logo">
-                            <button class="btn btn-success w-100 mt-3">Update</button>
-
+                            <input type="file" class="border border-gray-300 p-2 mt-3 {{ $errors->has('logo') ? ' border-red-500' : '' }}" name="logo">
+                            <button class="btn bg-green-500 text-white w-100 mt-3">Update</button>
+                        
                             @if ($errors->has('logo'))
                                 <div style="color:red">
                                     <p class="mb-0">{{ $errors->first('logo') }}</p>
                                 </div>
                             @endif
-
-
+                        
                             @if (Session::has('logo'))
                                 <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
                                     {{ Session::get('logo') }}
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
-
-                                
                             @endif
-
                         </div>
+                        
                     </div>
 
                 </form>
@@ -167,31 +164,30 @@
                         <div class="card-body">
                             <div>
                                 @if (!empty(Auth::user()->company->banner))
-                                <img src="{{ asset('uploads/banner') }}/{{ Auth::user()->company->banner }}" style="width:100%;object-fit: cover; margin:0px auto" class="border  mb-3" alt="">
+                                <img src="{{ url('storage/banners') }}/{{ Auth::user()->company->banner }}" style="width:100%;object-fit: cover; margin:0px auto" class="border mb-3" alt="">
                                 @else
                                 <img src="{{ asset('cover/cover-photo.jpg') }}" style="max-width: 100%" alt="">
                                 @endif 
                             </div>
-                            <input type="file" class="form-control{{ $errors->has('banner') ? ' is-invalid' : '' }}" name="banner">
-                            <button class="btn btn-success mt-3">Update</button>
-
-                        @if (Session::has('banner'))
-                            <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
-                                <strong>Wow !</strong> {{ Session::get('banner') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        @endif
-
-                        @if ($errors->has('banner'))
-                            <div style="color:red">
-                                <p class="mb-0">{{ $errors->first('banner') }}</p>
-                            </div>
-                        @endif
+                            <input type="file" class="border border-gray-300 p-2 mt-3 {{ $errors->has('banner') ? ' border-red-500' : '' }}" name="banner">
+                            <button class="btn bg-green-500 text-white mt-3">Update</button>
                 
-
+                            @if (Session::has('banner'))
+                                <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
+                                    <strong>Wow !</strong> {{ Session::get('banner') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endif
+                
+                            @if ($errors->has('banner'))
+                                <div style="color:red">
+                                    <p class="mb-0">{{ $errors->first('banner') }}</p>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </form>
+                
             
 
 

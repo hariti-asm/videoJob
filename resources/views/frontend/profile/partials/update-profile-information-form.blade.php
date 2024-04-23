@@ -101,10 +101,15 @@
                         <img src="https://i.pravatar.cc/150" style="width:100px;border-radius:100px; margin:0px auto" class="border  mb-3" alt="">
 
                         @endif
-                        <div class="card-body p-0 text-center">
+                        <div class="card-body my-3 text-center flex justify-between  ">
                             <input type="hidden" name="avatar" value="avatar">
-                            <input type="file" class="form-control{{ $errors->has('avatar') ? ' is-invalid' : '' }}" name="avatar">
-                            <button class="btn btn-success w-100 mt-3">Update</button>
+                            <input type="file" class="{{ $errors->has('avatar') ? 'is-invalid' : '' }}" name="avatar">
+                            @if ($errors->has('avatar'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('avatar') }}
+                                </div>
+                            @endif
+                            <button class="btn btn-success w-[20%]  mb-2">Update</button>
 
                             @if ($errors->has('avatar'))
                                 <div style="color:red">
@@ -146,7 +151,7 @@
 
                         @endif
                         @if (!empty(Auth::user()->resume))
-                            <p>Download resume: <strong class="badge bg-info badge-primary"><a  class="text-white"target="_blank" href="{{ url('storage/'.Auth::user()->resume) }}"> Resume</a> </strong></p>
+                            <p>Download resume: <strong class="badge bg-info badge-primary"><a  class="text-white"target="_blank" href="{{ url('storage/resumes/'.Auth::user()->resume) }}"> Resume</a> </strong></p>
                         @endif
 
                     </div>
@@ -159,57 +164,61 @@
                             Update Cover letter
                         </div>
                         <div class="card-body">
-                            <input type="file" class="form-control{{ $errors->has('cover_letter') ? ' is-invalid' : '' }}" name="cover_letter">
-                            <button class="btn btn-success mt-3">Update</button>
-
-                        @if (Session::has('coverletter'))
-                            <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
-                                <strong>Wow !</strong> {{ Session::get('coverletter') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        @endif
-
-                        @if ($errors->has('cover_letter'))
-                            <div style="color:red">
-                                <p class="mb-0">{{ $errors->first('cover_letter') }}</p>
-                            </div>
-                        @endif
+                            <input type="file" class="{{ $errors->has('cover_letter') ? 'is-invalid' : '' }}" name="cover_letter" style="padding: 0; margin: 0;">
+                            @if ($errors->has('cover_letter'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('cover_letter') }}
+                                </div>
+                            @endif
+                                                        <button class="btn btn-success mt-3">Update</button>
                 
-
+                            @if (Session::has('coverletter'))
+                                <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
+                                    <strong>Wow !</strong> {{ Session::get('coverletter') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endif
+                
+                            @if ($errors->has('cover_letter'))
+                                <div style="color:red">
+                                    <p class="mb-0">{{ $errors->first('cover_letter') }}</p>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </form>
                 
-
-                
                 <form action="{{ route('resume') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
+                    @csrf
                     <div class="card mt-3">
                         <div class="card-header">
                             Update Resume
                         </div>
                         <div class="card-body">
-                            
-                            <input type="file" class="form-control{{ $errors->has('resume') ? ' is-invalid' : '' }}" name="resume">
-                            <button class="btn btn-success mt-3">Update</button>
+                            <input type="file" class="{{ $errors->has('resume') ? 'is-invalid' : '' }}" name="resume" style="width: 100%; padding: 0; margin: 0;">
+                            @if ($errors->has('resume'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('resume') }}
+                                </div>
+                            @endif
+                                                        <button class="btn btn-success mt-3">Update</button>
                             @if (Session::has('resume'))
                                 <div class="alert alert-success mt-3 alert-dismissible fade show" role="alert">
                                     <strong>Wow !</strong> {{ Session::get('resume') }}
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
-                                
                             @endif
-
+                
                             @if ($errors->has('resume'))
                                 <div style="color:red">
                                     <p class="mb-0">{{ $errors->first('resume') }}</p>
                                 </div>
                             @endif
-
                         </div>
                     </div>
-
                 </form>
+                
+                
                 
             </div>
         </div>

@@ -12,7 +12,8 @@ class UserProfileController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['seeker', 'verified']);
+        $this->middleware(['seeker']);
+        // , 'verified'
     }
 
     /**
@@ -36,7 +37,7 @@ class UserProfileController extends Controller
             'address' => 'required|min:20|max:255',
             'phone'=> 'required',
             'experience'=> 'required|integer',
-            'bio'=> 'required|min:30|max:450',
+            'bio'=> 'required|min:20|max:450',
         ]);
 
 

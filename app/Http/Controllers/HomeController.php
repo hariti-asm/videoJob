@@ -52,10 +52,13 @@ class HomeController extends Controller
      }
      
       
-    public function appliedJobs() {
+     public function appliedJobs() {
         $jobs = Auth::user()->applications;
-            return view('frontend.jobs.appliedJobs', compact('jobs'));
+        $videos = Auth::user()->videos;
+        
+        return view('frontend.jobs.appliedJobs', compact('jobs', 'videos'));
     }
+    
     
 
     /**
