@@ -17,7 +17,7 @@
                 <td class="border px-4 py-2">
                     <div class="w-48 h-36 md:w-64 md:h-48 lg:w-72 lg:h-56 xl:w-80 xl:h-64">
                         <video controls class=" rounded-lg">
-                            <source src="{{ asset($video->path) }}" type="video/mp4">
+                            <source src="{{ url(''.($video->path) )}}" type="video/mp4">
                         </video>
                     </div>
                 </td>

@@ -20,7 +20,7 @@
                     <thead>
                         <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
                             <th class="px-4 py-3">Name</th>
-                            <th class="px-4 py-3">Age</th>
+                            <th class="px-4 py-3">Date</th>
                             <th class="px-4 py-3">Status</th>
                             <th class="px-4 py-3">Score</th>
                             <th class="px-4 py-3">Details</th>

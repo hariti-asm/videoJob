@@ -53,7 +53,6 @@ class ApplyController extends Controller
             'experience' => $request->input('experience'),
             'phone' => $request->input('phone'),
             'bio' => $request->input('bio'),
-            // Update other attributes as needed
         ]);
 
         // Handle file uploads for cover letter, resume, avatar
@@ -75,9 +74,7 @@ class ApplyController extends Controller
         return redirect()->back()->with('success', 'Profile updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)
     {
         //

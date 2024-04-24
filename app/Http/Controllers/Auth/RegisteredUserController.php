@@ -34,24 +34,8 @@ class RegisteredUserController extends Controller
      */
   
 
-     public function store(Request $request): RedirectResponse
+     public function store(RegisterRequest $request): RedirectResponse
      { 
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', Rule::unique(User::class)->ignore(auth()->id())],
-            'address' => ['required', 'string'],
-            'job' => ['required', 'string'],
-
-            'gender' => ['required', 'string', Rule::in(['male', 'female'])],
-            'dob' => ['required', 'date'],
-            'experience' => ['required', 'string'],
-            'phone' => ['required', 'string'],
-            'bio' => ['required', 'string'],
-            'status' => ['required'],
-            'cover_letter' => ['required'],
-            'resume' => ['required'],
-            'avatar' => ['required'],
-        ]);
          
          if ($request->hasFile('avatar')) { 
              $fileNameToStoreAvatar = $this->uploadFileAndGetFileName($request->file('avatar'), 'public/avatars');
@@ -65,23 +49,9 @@ class RegisteredUserController extends Controller
              $fileNameToStoreCoverLetter = $this->uploadFileAndGetFileName($request->file('cover_letter'), 'public/cover_letters');
          }
      
-         $user =  User::create([
-             'name' => $request->input('name'),
-             'email' => $request->input('email'),
-             'password' => Hash::make($request->input('password')),
-             'user_type' => $request->input('user_type'),
-             'gender' => $request->input('gender'),
-             'address' => $request->input('address'),
-             'job' => $request->input('job'),
-             'dob' => $request->input('dob'),
-             'experience' => $request->input('experience'),
-             'phone' => $request->input('phone'),
-             'bio' => $request->input('bio'),
-             'avatar' => $fileNameToStoreAvatar ?? null,
-             'resume' => $fileNameToStoreResume ?? null,
-             'cover_letter' => $fileNameToStoreCoverLetter ?? null,
-             'status' => $request->input('status'),
-         ]);
+         $request->merge(['password' => Hash::make($request->input('password'))]);
+
+         $user =  User::create($request->validated() + ['avatar' => $fileNameToStoreAvatar, 'resume' => $fileNameToStoreResume, 'cover_letter' => $fileNameToStoreCoverLetter]);
     //  dd($user);
          event(new Registered($user));
          Auth::login($user);
