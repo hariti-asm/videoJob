@@ -1,5 +1,5 @@
 <?php
-
+//user
 namespace App\Models;
 
  use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -66,14 +66,14 @@ class User extends Authenticatable implements MustVerifyEmail
     public function applications(){
         return $this->belongsToMany(Job::class, 'job_user', 'user_id', 'job_id')->withTimestamps();
     }
-    public function videos(){
-        return $this->belongsTo(Video::class, 'user_id', 'job_id');
-    }
     public function roles(){
         return $this->belongsToMany(Role::class);
     }
 
 
-
+    public function videos()
+    {
+        return $this->hasMany(Video::class, 'user_id');
+    }
     
 }
