@@ -36,23 +36,23 @@ class RegisteredUserController extends Controller
 
      public function store(RegisterRequest $request): RedirectResponse
      { 
+        $data = $request->validated();
+
          
          if ($request->hasFile('avatar')) { 
-             $fileNameToStoreAvatar = $this->uploadFileAndGetFileName($request->file('avatar'), 'public/avatars');
+            $data['avatar']  = $this->uploadFileAndGetFileName($request->file('avatar'), 'public/avatars');
          }
      
          if ($request->hasFile('resume')) {
-             $fileNameToStoreResume = $this->uploadFileAndGetFileName($request->file('resume'), 'public/resumes');
+            $data['resume'] = $this->uploadFileAndGetFileName($request->file('resume'), 'public/resumes');
             }
      
          if ($request->hasFile('cover_letter')) {
-             $fileNameToStoreCoverLetter = $this->uploadFileAndGetFileName($request->file('cover_letter'), 'public/cover_letters');
-         }
-     
+            $data['cover_letter'] = $this->uploadFileAndGetFileName($request->file('cover_letter'), 'public/cover_letters');
+         }  
          $request->merge(['password' => Hash::make($request->input('password'))]);
+         $user = User::create($data);
 
-         $user =  User::create($request->validated() + ['avatar' => $fileNameToStoreAvatar, 'resume' => $fileNameToStoreResume, 'cover_letter' => $fileNameToStoreCoverLetter]);
-    //  dd($user);
          event(new Registered($user));
          Auth::login($user);
          Mail::to(Auth::user()->email)->send(new RegisterMail($user));
