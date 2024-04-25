@@ -16,6 +16,8 @@
                         <div class="p-4 bg-white">
                             <h2 class="text-2xl font-bold mb-4">Video Transcript</h2>
                             @foreach ($applicant as $video)
+                            <p class="text-gray-800">{{ $video->score }}</p>
+
                                 <p class="text-gray-800">{{ $video->transcript }}</p>
                                 <video controls class="w-full my-4">
                                     <source src="{{ asset($video->path) }}" type="video/mp4">

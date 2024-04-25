@@ -52,11 +52,13 @@
                                         @endif
                                     </td>
                                     <td class="px-4 py-3 text-sm border">
-                                        @foreach ($user->videos as $video)
-                                            @if ($video->user_id == $user->id)
-                                                <span class="{{ $video->score > 50 ? 'text-[#28a745]' : 'text-red-500' }}">{{ $video->score }}%</span>
-                                            @endif
-                                        @endforeach
+                                        @if($user->videos->contains('job_id',$job->id))
+                                           @php
+                                      $score = $user->videos->where('job_id', $job->id)->pluck('score')->first();
+                                           @endphp
+                                        <span class="{{ $score> 50 ? 'text-[#28a745]' : 'text-red-500' }}">{{$score}}%</span>
+                                        
+                                        @endif 
                                     </td>
                                     <td class="px-4 py-3 text-sm border">
                                         &nbsp;<a href="{{ route('applicant_data',  $user)}}" class="btn btn-secondary btn-sm">see</a>

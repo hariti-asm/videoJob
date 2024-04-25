@@ -32,14 +32,13 @@ class Admin
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check()) {
-            $adminRole = Auth::user()->roles()->pluck('name');
-            if ($adminRole->contains('admin')) {
+            if (Auth::user()->user_type === 'admin') {
                 return $next($request);
             }
         }
     
         // Handle unauthorized access here
-        return redirect()->to('/');
+        return abort(403, 'forbidden');
     }
     
 

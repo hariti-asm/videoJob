@@ -106,7 +106,7 @@
                           @foreach ($weeklyUsers as $user )
                           <tr>
                                <td>{{ $user->name }}</td>
-                               <td >{{ $user->created_at->diffForHumans() }}</td>
+                               <td class="px-4 py-2 text-sm text-gray-700">{{ $user->created_at->diffForHumans() }}</td>
                                <td>
                                             
                                   @if ($user->email_verified_at)
