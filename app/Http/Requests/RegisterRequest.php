@@ -28,7 +28,7 @@ class RegisterRequest extends FormRequest
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique(User::class)->ignore(auth()->id())],
             'address' => ['required', 'string'],
             'job' => ['required', 'string'],
-           'password'=> ['required', 'string', 'min:8', 'confirmed'],
+            'password'=> ['required', 'string', 'min:8','confirmed'],
             'gender' => ['required', 'string', Rule::in(['male', 'female'])],
             'dob' => ['required', 'date'],
             'experience' => ['required', 'string'],

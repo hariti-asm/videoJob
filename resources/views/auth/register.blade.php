@@ -68,6 +68,7 @@
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
 
+                  <button id ="showPass"> show pass</button>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -231,3 +232,15 @@
 </div>
 
 @endsection
+<script>
+const pass= document.getElementById('password');
+const show = document.getElementById('show');
+show.addEventListener('click', function(){
+
+console.log(pass.value());
+
+
+})
+
+
+</script>
