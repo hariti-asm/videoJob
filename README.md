@@ -30,36 +30,85 @@
 
 ![screencapture-127-0-0-1-8000-2023-09-01-20_31_16](public/assets/2.png)
 
+
 ![screencapture-127-0-0-1-8000-dashboard-2023-09-01-20_35_41](public/assets/testimonials.png)
+
 
 ![screencapture-127-0-0-1-8000-jobs-alljobs-2023-09-01-20_34_45](public/assets/all.png)
 
+
 ![screencapture-127-0-0-1-8000-jobs-alljobs-2023-09-01-20_34_45](public/assets/category.png)
+
+
 ![screencapture-127-0-0-1-8000-jobs-share job-2023-09-01-20_33_11](public/assets/share.png)
+
 
 ![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/apply.png)
 
-![screencapture-127-0-0-1-8000-job-apply-using a video](public/assets/video.png)
+
+![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/seeker_register.png)
+
+![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/employer_register.png)
+
+
+![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/company_profile.png)
+
+
+![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/login.png)
+
+
+![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/forgot_password.png)
+
+
+![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/reset.png)
+
+
+![screencapture-127-0-0-1-8000-jobs-applyjob-2023-09-01-20_33_11](public/assets/edit_seeker_profile.png)
+
+
+![screencapture-127-0-0-1-8000-job-apply-using a video](public/assets/auto.png)
+
 
 ![screencapture-127-0-0-1-80custom-blog-from-psd-2023-09-01-20_33_32](public/assets/already.png)
 
+
 ![screencapture-127-0-0-1-8000-home-2023-09-01-20_32_30](public/assets/applied.png)
 
-![screencapture-127-0-0-1-8000-jobs-create-2023-09-01-20_34_35](public/assets/add.png)
 
-![screencapture-127-0-0-1-8000-jobs-applications-2023-09-01-20_34_56](public/assets/myjobs.png)
+![screencapture-127-0-0-1-8000-jobs-create-2023-09-01-20_34_35](public/assets/add_job.png)
 
-![screencapture-127-0-0-1-8000-dashboard-settings-2023-09-01-20_36_43](public/assets/applicants.png)
 
-![screencapture-127-0-0-1-8000-dashboard-settings-2023-09-01-20_36_43](public/assets/transcript.png)
+![screencapture-127-0-0-1-8000-jobs-applications-2023-09-01-20_34_56](public/assets/my_jobs.png)
+
+
+![screencapture-127-0-0-1-8000-dashboard-settings-2023-09-01-20_36_43](public/assets/applicants_.png)
+
+
+![screencapture-127-0-0-1-8000-dashboard-settings-2023-09-01-20_36_43](public/assets/transcript_.png)
+
 
 ![screencapture-127-0-0-1-8000-dashboard-posts-2023-09-01-20_36_27](public/assets/posts.png)
 
-![screencapture-127-0-0-1-8000-dashboard-jobs-2023-09-01-20_35_55](public/assets//adminj.png)
+
+![screencapture-127-0-0-1-8000-dashboard-jobs-2023-09-01-20_35_55](public/assets/adminj.png)
+
 
 ![screencapture-127-0-0-1-8000-dashboard-employers-2023-09-01-20_36_17](public/assets/candidates.png)
 
+
 ![screencapture-127-0-0-1-8000-dashboard-category-2023-09-01-20_36_35](public/assets/adminc.png)
+
+
+![screencapture-127-0-0-1-8000-dashboard-category-2023-09-01-20_36_35](public/assets/verify.png)
+
+
+![screencapture-127-0-0-1-8000-dashboard-category-2023-09-01-20_36_35](public/assets/confirm.png)
+
+
+![screencapture-127-0-0-1-8000-dashboard-category-2023-09-01-20_36_35](public/assets/rejected.png)
+
+
+
 
 
 
